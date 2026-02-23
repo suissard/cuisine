@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recette Détaillée</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .header {
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+
+        .header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .meta-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .tag-diff {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .tag-type {
+            background: #ecfdf5;
+            color: #047857;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 400px;
+            background: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #recipe-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .loader {
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 10px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .content {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h2 {
+            font-size: 1.3rem;
+            border-bottom: 2px solid #bfdbfe;
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .ingredient-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+
+        .ingredient-name {
+            font-weight: 500;
+        }
+        
+        .ingredient-sub {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: block;
+        }
+
+        .ingredient-qty {
+            color: var(--primary);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .step {
+            margin-bottom: 2.5rem;
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
+        .step-desc {
+            margin: 0 0 1rem 0;
+            padding-left: 2.8rem;
+            line-height: 1.8;
+        }
+
+        .step-meta {
+            padding-left: 2.8rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .materiel-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .materiel-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .materiel-list li {
+            padding: 0.5rem 0;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-text {
+            background: linear-gradient(to bottom, transparent 60%, var(--hl-color) 0);
+            padding: 0 2px;
+            font-weight: 600;
+            border-radius: 2px;
+            color: #0f172a;
+        }
+
+        .materiel-badge {
+            background-color: var(--hl-color);
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #1e293b;
+            font-weight: 600;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1 id="title">Titre</h1>
+            <p id="desc">Description</p>
+            <div class="meta-tags" id="tags"></div>
+            <div class="meta-tags" id="diff-tags" style="margin-top: 0.5rem;"></div>
+        </div>
+
+        <div class="image-container">
+            <div class="loader" id="loader">
+                <div class="spinner"></div>
+                <p>Création de la photo par l'IA en cours... 🎨</p>
+            </div>
+            <img id="recipe-image" alt="Photo générée de la recette" />
+        </div>
+
+        <div class="content">
+            <!-- Colonne de gauche : Ingrédients & Matériel -->
+            <div>
+                <h2>🛒 Ingrédients</h2>
+                <div id="ingredients"></div>
+
+                <h2 style="margin-top: 2rem;">🛠 Matériel Global</h2>
+                <ul class="materiel-list" id="materiel-global"></ul>
+            </div>
+
+            <!-- Colonne de droite : Étapes -->
+            <div>
+                <h2>🍳 Préparation</h2>
+                <div id="etapes"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const recette = {
+          "id": 5,
+          "titre": "PRESSÉ de POMMES de TERRE et SARDINES",
+          "origine": "C.V.F. n°202",
+          "description": "Surprenant, très apprécié des wetistes à Esparron de Verdon en 2021",
+          "portions": 4,
+          "categorie_plat": ["Entrée"],
+          "degustation": "Froid",
+          "difficulte": {
+            "preparation": 2,
+            "cuisson": 1,
+            "repos": 1
+          },
+          "materiel_global": ["Casserole", "Mixeur", "Terrine", "Film alimentaire", "Poids (pour tasser)"],
+          "ingredients": [
+            {"nom": "Pommes de terre", "categorie": "Légumes", "sous_type": "à chair ferme", "quantite": {"valeur": 8, "fourchette": [6, 8], "unite": "pièce"}},
+            {"nom": "Échalotes", "categorie": "Légumes", "sous_type": null, "quantite": {"valeur": 2, "fourchette": null, "unite": "pièce"}},
+            {"nom": "Thym", "categorie": "Herbes", "sous_type": "frais", "quantite": {"valeur": 3, "fourchette": [2, 4], "unite": "brin"}},
+            {"nom": "Sardines à l'huile", "categorie": "Poisson", "sous_type": "en boîte", "quantite": {"valeur": 2, "fourchette": null, "unite": "boîte"}},
+            {"nom": "Ail", "categorie": "Légumes", "sous_type": null, "quantite": {"valeur": 1, "fourchette": [1, 2], "unite": "gousse"}},
+            {"nom": "Persil", "categorie": "Herbes", "sous_type": "frais", "quantite": {"valeur": 6, "fourchette": null, "unite": "brin"}},
+            {"nom": "Sel", "categorie": "Assaisonnement", "sous_type": "fin", "quantite": {"valeur": null, "fourchette": null, "unite": "au goût"}},
+            {"nom": "Poivre", "categorie": "Assaisonnement", "sous_type": "moulu", "quantite": {"valeur": null, "fourchette": null, "unite": "au goût"}}
+          ],
+          "etapes": [
+            {
+              "ordre": 1, 
+              "description": "Faites cuire les pommes de terre. Epluchez-les chaudes et coupez en rondelles de 1 cm.", 
+              "materiel": [
+                {"nom": "Casserole", "texte_associe": "Faites cuire les pommes de terre"},
+                {"nom": "Couteau d'office", "texte_associe": "coupez en rondelles de 1 cm"}
+              ], 
+              "temps": {"preparation_min": 5, "cuisson_min": 20, "repos_min": 0}
+            },
+            {
+              "ordre": 2, 
+              "description": "Egouttez et émiettez les sardines. Conservez l'huile.", 
+              "materiel": [
+                {"nom": "Passoire", "texte_associe": "Egouttez"},
+                {"nom": "Fourchette", "texte_associe": "émiettez les sardines"}
+              ], 
+              "temps": {"preparation_min": 5, "cuisson_min": 0, "repos_min": 0}
+            },
+            {
+              "ordre": 3, 
+              "description": "Mixez échalotes, ail, persil avec l'huile des sardines. Salez, poivrez.", 
+              "materiel": [
+                {"nom": "Mixeur", "texte_associe": "Mixez échalotes, ail, persil"}
+              ], 
+              "temps": {"preparation_min": 5, "cuisson_min": 0, "repos_min": 0}
+            },
+            {
+              "ordre": 4, 
+              "description": "Tapissez une terrine de film. Superposez : pommes de terre, sardines, mélange au persil, thym. Répétez l'opération.", 
+              "materiel": [
+                {"nom": "Terrine", "texte_associe": "une terrine"},
+                {"nom": "Film alimentaire", "texte_associe": "Tapissez"},
+                {"nom": "Poids", "texte_associe": "Superposez"}
+              ], 
+              "temps": {"preparation_min": 5, "cuisson_min": 0, "repos_min": 0}
+            },
+            {
+              "ordre": 5, 
+              "description": "Tassez fortement. Posez un poids. Laissez au réfrigérateur une nuit.", 
+              "materiel": [
+                {"nom": "Poids", "texte_associe": "Posez un poids"},
+                {"nom": "Réfrigérateur", "texte_associe": "Laissez au réfrigérateur"}
+              ], 
+              "temps": {"preparation_min": 2, "cuisson_min": 0, "repos_min": 1440}
+            }
+          ]
+        };
+
+        const pastelColors = [
+            'rgba(253, 224, 71, 0.35)', 'rgba(134, 239, 172, 0.35)', 'rgba(147, 197, 253, 0.35)', 
+            'rgba(249, 168, 212, 0.35)', 'rgba(216, 180, 254, 0.35)', 'rgba(253, 186, 116, 0.35)', 
+            'rgba(110, 231, 183, 0.35)', 'rgba(252, 165, 165, 0.35)'
+        ];
+        const globalMaterielColors = {};
+        let colorIdx = 0;
+
+        function getColorFor(nom) {
+            for (const key in globalMaterielColors) {
+                if (nom.toLowerCase().includes(key.toLowerCase()) || key.toLowerCase().includes(nom.toLowerCase())) {
+                    return globalMaterielColors[key];
+                }
+            }
+            const color = pastelColors[colorIdx % pastelColors.length];
+            globalMaterielColors[nom] = color;
+            colorIdx++;
+            return color;
+        }
+
+        const getStars = (num) => '★'.repeat(num) + '☆'.repeat(5 - num);
+
+        document.getElementById('title').textContent = recette.titre;
+        document.getElementById('desc').textContent = recette.description;
+        
+        let totalPrep = 0, totalCuisson = 0, totalRepos = 0;
+        recette.etapes.forEach(e => {
+            totalPrep += e.temps.preparation_min;
+            totalCuisson += e.temps.cuisson_min;
+            totalRepos += e.temps.repos_min;
+        });
+
+        const formatTime = (mins) => {
+            if (mins >= 1440) return `${Math.floor(mins / 1440)}j`;
+            if (mins >= 60) return `${Math.floor(mins / 60)}h${mins % 60 > 0 ? mins % 60 : ''}`;
+            return `${mins} min`;
+        };
+
+        // Tags généraux
+        document.getElementById('tags').innerHTML = `
+            <span class="tag tag-type">🏷️ ${recette.categorie_plat.join(', ')}</span>
+            <span class="tag tag-type">🌡️ ${recette.degustation}</span>
+            <span class="tag">🍽️ ${recette.portions} portions</span>
+            <span class="tag">⏱️ Prép: ${formatTime(totalPrep)}</span>
+            ${totalCuisson > 0 ? `<span class="tag">🔥 Cuisson: ${formatTime(totalCuisson)}</span>` : ''}
+            ${totalRepos > 0 ? `<span class="tag">❄️ Repos: ${formatTime(totalRepos)}</span>` : ''}
+            <span class="tag">📖 ${recette.origine}</span>
+        `;
+
+        // Tags difficulté
+        document.getElementById('diff-tags').innerHTML = `
+            <span class="tag tag-diff">Prép: <span style="letter-spacing: 2px">${getStars(recette.difficulte.preparation)}</span></span>
+            <span class="tag tag-diff">Cuisson: <span style="letter-spacing: 2px">${getStars(recette.difficulte.cuisson)}</span></span>
+            <span class="tag tag-diff">Repos: <span style="letter-spacing: 2px">${getStars(recette.difficulte.repos)}</span></span>
+        `;
+
+        document.getElementById('materiel-global').innerHTML = recette.materiel_global
+            .map(m => `<li>🛠️ <span class="highlight-text" style="--hl-color: ${getColorFor(m)};">${m}</span></li>`).join('');
+
+        document.getElementById('ingredients').innerHTML = recette.ingredients.map(ing => {
+            let qty = '';
+            if (ing.quantite.fourchette) {
+                qty = `${ing.quantite.fourchette[0]} à ${ing.quantite.fourchette[1]} ${ing.quantite.unite}`;
+            } else if (ing.quantite.valeur) {
+                qty = `${ing.quantite.valeur} ${ing.quantite.unite}`;
+            } else {
+                qty = ing.quantite.unite;
+            }
+            let sub = ing.sous_type ? `<span class="ingredient-sub">${ing.sous_type}</span>` : '';
+            return `
+                <div class="ingredient-item">
+                    <div><span class="ingredient-name">${ing.nom}</span>${sub}</div>
+                    <span class="ingredient-qty">${qty}</span>
+                </div>
+            `;
+        }).join('');
+
+        document.getElementById('etapes').innerHTML = recette.etapes.map(etape => {
+            let times = [];
+            if (etape.temps.preparation_min) times.push(`Prép: ${etape.temps.preparation_min}m`);
+            if (etape.temps.cuisson_min) times.push(`Cuisson: ${etape.temps.cuisson_min}m`);
+            if (etape.temps.repos_min) times.push(`Repos: ${formatTime(etape.temps.repos_min)}`);
+
+            let desc = etape.description;
+            let materielHtml = '';
+
+            etape.materiel.forEach(mat => {
+                const color = getColorFor(mat.nom);
+                if (mat.texte_associe && desc.includes(mat.texte_associe)) {
+                    desc = desc.replace(
+                        mat.texte_associe, 
+                        `<span class="highlight-text" style="--hl-color: ${color};">${mat.texte_associe}</span>`
+                    );
+                }
+                materielHtml += `<span class="materiel-badge" style="--hl-color: ${color};">🛠️ ${mat.nom}</span>`;
+            });
+
+            return `
+                <div class="step">
+                    <div class="step-header">
+                        <div class="step-number">${etape.ordre}</div>
+                        <strong>Étape ${etape.ordre}</strong>
+                    </div>
+                    <p class="step-desc">${desc}</p>
+                    <div class="step-meta">
+                        <span style="min-width: 120px;">⏱️ ${times.join(' | ')}</span>
+                        <div class="materiel-badges">${materielHtml}</div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        async function generateImage() {
+            const apiKey = ""; 
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/imagen-4.0-generate-001:predict?key=${apiKey}`;
+            const prompt = `A beautiful, appetizing, professional food photography shot of a "${recette.titre}". It is a layered terrine made of sliced potatoes and sardines, with herbs like parsley and thyme. Served elegantly on a plate, rustic background, soft natural lighting, high resolution.`;
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        instances: { prompt: prompt },
+                        parameters: { sampleCount: 1 }
+                    })
+                });
+                const data = await response.json();
+                const base64Data = data.predictions?.[0]?.bytesBase64Encoded;
+
+                if (base64Data) {
+                    const img = document.getElementById('recipe-image');
+                    img.src = `data:image/png;base64,${base64Data}`;
+                    img.style.display = 'block';
+                    document.getElementById('loader').style.display = 'none';
+                } else throw new Error("Pas d'image générée");
+            } catch (error) {
+                console.error("Erreur de génération d'image:", error);
+                document.getElementById('loader').innerHTML = "<p>Impossible de charger la photo 😕</p>";
+            }
+        }
+        window.onload = generateImage;
+
+    </script>
+</body>
+</html>
