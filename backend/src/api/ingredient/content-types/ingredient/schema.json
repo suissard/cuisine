@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ingredients",
+  "info": {
+    "singularName": "ingredient",
+    "pluralName": "ingredients",
+    "displayName": "Ingredient"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "categorie": {
+      "type": "enumeration",
+      "enum": [
+        "Légumes",
+        "Fruits",
+        "Viande",
+        "Poisson",
+        "Féculent",
+        "Laitier",
+        "Assaisonnement",
+        "Autre"
+      ]
+    },
+    "intolerances": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::intolerance.intolerance",
+      "inversedBy": "ingredients"
+    }
+  }
+}

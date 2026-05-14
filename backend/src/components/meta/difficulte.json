@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_meta_difficultes",
+  "info": {
+    "displayName": "Difficulte",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "preparation": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
+    },
+    "cuisson": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
+    },
+    "repos": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
+    }
+  }
+}

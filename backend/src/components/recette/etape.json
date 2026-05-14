@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_recette_etapes",
+  "info": {
+    "displayName": "Etape",
+    "icon": "list"
+  },
+  "options": {},
+  "attributes": {
+    "ordre": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    },
+    "temps": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.temps"
+    },
+    "materiel_utilise": {
+      "type": "component",
+      "repeatable": true,
+      "component": "recette.materiel-etape"
+    }
+  }
+}
