@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "intolerances",
+  "info": {
+    "singularName": "intolerance",
+    "pluralName": "intolerances",
+    "displayName": "Intolerance"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "ingredients": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ingredient.ingredient",
+      "mappedBy": "intolerances"
+    }
+  }
+}

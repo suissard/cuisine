@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categorie_plats",
+  "info": {
+    "singularName": "categorie-plat",
+    "pluralName": "categorie-plats",
+    "displayName": "CategoriePlat"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "recettes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::recette.recette",
+      "mappedBy": "categories"
+    }
+  }
+}

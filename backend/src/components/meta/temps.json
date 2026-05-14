@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_meta_temps",
+  "info": {
+    "displayName": "Temps",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "preparation_min": {
+      "type": "integer"
+    },
+    "cuisson_min": {
+      "type": "integer"
+    },
+    "repos_min": {
+      "type": "integer"
+    }
+  }
+}

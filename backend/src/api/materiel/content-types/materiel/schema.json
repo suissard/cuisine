@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "materiels",
+  "info": {
+    "singularName": "materiel",
+    "pluralName": "materiels",
+    "displayName": "Materiel"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "required": true
+    },
+    "recettes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::recette.recette",
+      "mappedBy": "materiel_global"
+    }
+  }
+}

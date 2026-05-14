@@ -1,0 +1,31 @@
+services:
+  strapi:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: strapi-backend
+    ports:
+      - "1337:1337"
+    volumes:
+      - ./backend/data:/app/data
+    environment:
+      - NODE_ENV=development
+      - HOST=0.0.0.0
+      - PORT=1337
+      - APP_KEYS=ToBeModified1,ToBeModified2
+      - API_TOKEN_SALT=ToBeModified
+      - ADMIN_JWT_SECRET=ToBeModified
+      - TRANSFER_TOKEN_SALT=ToBeModified
+      - DATABASE_CLIENT=sqlite
+      - DATABASE_FILENAME=data/data.db
+      - JWT_SECRET=ToBeModified
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: vue-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - strapi

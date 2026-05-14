@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_recette_recette_ingredients",
+  "info": {
+    "displayName": "Recette_Ingredient",
+    "icon": "restaurant"
+  },
+  "options": {},
+  "attributes": {
+    "ingredient": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::ingredient.ingredient"
+    },
+    "valeur": {
+      "type": "decimal"
+    },
+    "unite": {
+      "type": "string"
+    },
+    "sous_type": {
+      "type": "string"
+    }
+  }
+}
