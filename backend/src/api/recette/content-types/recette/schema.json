@@ -67,6 +67,11 @@
       "type": "component",
       "repeatable": true,
       "component": "recette.etape"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
     }
   }
 }

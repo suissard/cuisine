@@ -19,50 +19,100 @@ export default {
    * run jobs, or perform some special logic.
    */
   async bootstrap({ strapi }: { strapi: Core.Strapi }) {
-    const recettesCount = await strapi.db.query('api::recette.recette').count();
+    console.log('Checking and seeding database with recipes...');
 
-    if (recettesCount === 0) {
-      console.log('Seeding database with recipes...');
+    // Ensure a default user exists for seeded recipes
+    let defaultUser = await strapi.db.query('plugin::users-permissions.user').findOne({
+      where: { username: 'cuisinier' }
+    });
 
-      const recipesData = JSON.parse(
-        fs.readFileSync(path.join(__dirname, '../../data/recipes.json'), 'utf-8')
-      );
+    if (!defaultUser) {
+      const authenticatedRole = await strapi.db.query('plugin::users-permissions.role').findOne({
+        where: { type: 'authenticated' }
+      });
 
-      for (const recipe of recipesData) {
+      defaultUser = await strapi.db.query('plugin::users-permissions.user').create({
+        data: {
+          username: 'cuisinier',
+          email: 'cuisinier@example.com',
+          password: 'password123',
+          confirmed: true,
+          role: authenticatedRole.id,
+        }
+      });
+    }
+
+    const recipesData = JSON.parse(
+      fs.readFileSync(path.join(process.cwd(), 'data/recipes.json'), 'utf-8')
+    );
+
+    for (const recipe of recipesData) {
+      const existing = await strapi.documents('api::recette.recette').findFirst({
+        filters: { titre: recipe.titre },
+        populate: { author: true }
+      });
+
+      if (existing) {
+        // If the recipe exists but has no author, update it
+        if (!existing.author) {
+          console.log(`Updating recipe with author: ${recipe.titre}`);
+          await strapi.documents('api::recette.recette').update({
+            documentId: existing.documentId,
+            data: { author: { connect: [defaultUser.id] } },
+            status: 'published'
+          });
+        }
+        continue;
+      }
+      
+      console.log(`Seeding recipe: ${recipe.titre}`);
         // Create Categories
-        const categoryIds = [];
+        const categoryDocIds = [];
         for (const catName of recipe.categories) {
-          let cat = await strapi.db.query('api::categorie-plat.categorie-plat').findOne({ where: { nom: catName } });
+          let cat = await strapi.documents('api::categorie-plat.categorie-plat').findFirst({
+            filters: { nom: catName }
+          });
           if (!cat) {
-            cat = await strapi.db.query('api::categorie-plat.categorie-plat').create({ data: { nom: catName } });
+            cat = await strapi.documents('api::categorie-plat.categorie-plat').create({
+              data: { nom: catName },
+              status: 'published'
+            });
           }
-          categoryIds.push(cat.id);
+          categoryDocIds.push(cat.documentId);
         }
 
         // Create Global Materiels
-        const materielGlobalIds = [];
+        const materielGlobalDocIds = [];
         for (const matName of recipe.materiel_global) {
-          let mat = await strapi.db.query('api::materiel.materiel').findOne({ where: { nom: matName } });
+          let mat = await strapi.documents('api::materiel.materiel').findFirst({
+            filters: { nom: matName }
+          });
           if (!mat) {
-            mat = await strapi.db.query('api::materiel.materiel').create({ data: { nom: matName } });
+            mat = await strapi.documents('api::materiel.materiel').create({
+              data: { nom: matName },
+              status: 'published'
+            });
           }
-          materielGlobalIds.push(mat.id);
+          materielGlobalDocIds.push(mat.documentId);
         }
 
         // Create Ingredients
         const formattedIngredients = [];
         for (const ing of recipe.ingredients) {
-          let ingredientObj = await strapi.db.query('api::ingredient.ingredient').findOne({ where: { nom: ing.ingredient.nom } });
+          let ingredientObj = await strapi.documents('api::ingredient.ingredient').findFirst({
+            filters: { nom: ing.ingredient.nom }
+          });
           if (!ingredientObj) {
-            ingredientObj = await strapi.db.query('api::ingredient.ingredient').create({
+            ingredientObj = await strapi.documents('api::ingredient.ingredient').create({
               data: {
                 nom: ing.ingredient.nom,
                 categorie: ing.ingredient.categorie
-              }
+              },
+              status: 'published'
             });
           }
           formattedIngredients.push({
-            ingredient: ingredientObj.id,
+            ingredient: ingredientObj.documentId,
             valeur: ing.valeur,
             unite: ing.unite,
             sous_type: ing.sous_type
@@ -72,15 +122,20 @@ export default {
         // Create Etapes
         const formattedEtapes = [];
         for (const etape of recipe.etapes) {
-          const materielUtiliseIds = [];
+          const materielUtilise = [];
           if (etape.materiel_utilise) {
             for (const mat of etape.materiel_utilise) {
-              let matObj = await strapi.db.query('api::materiel.materiel').findOne({ where: { nom: mat.materiel.nom } });
+              let matObj = await strapi.documents('api::materiel.materiel').findFirst({
+                filters: { nom: mat.materiel.nom }
+              });
               if (!matObj) {
-                matObj = await strapi.db.query('api::materiel.materiel').create({ data: { nom: mat.materiel.nom } });
+                matObj = await strapi.documents('api::materiel.materiel').create({
+                  data: { nom: mat.materiel.nom },
+                  status: 'published'
+                });
               }
-              materielUtiliseIds.push({
-                materiel: matObj.id,
+              materielUtilise.push({
+                materiel: matObj.documentId,
                 texte_associe: mat.texte_associe
               });
             }
@@ -90,29 +145,29 @@ export default {
             ordre: etape.ordre,
             description: etape.description,
             temps: etape.temps,
-            materiel_utilise: materielUtiliseIds
+            materiel_utilise: materielUtilise
           });
         }
 
-        // Create Recipe
-        await strapi.db.query('api::recette.recette').create({
+        // Create Recipe with author
+        await strapi.documents('api::recette.recette').create({
           data: {
             titre: recipe.titre,
             description: recipe.description,
             origine: recipe.origine,
             portions: recipe.portions,
             degustation: recipe.degustation,
-            categories: categoryIds,
-            materiel_global: materielGlobalIds,
+            categories: categoryDocIds,
+            materiel_global: materielGlobalDocIds,
             difficulte: recipe.difficulte,
             ingredients: formattedIngredients,
             etapes: formattedEtapes,
-            publishedAt: new Date(),
-          }
+            author: { connect: [defaultUser.id] },
+          },
+          status: 'published'
         });
       }
       console.log('Seeding complete!');
-    }
 
     // Make public API readable
     const role = await strapi.db.query('plugin::users-permissions.role').findOne({
@@ -123,7 +178,9 @@ export default {
       const publicPermissions = [
         'api::recette.recette.find',
         'api::recette.recette.findOne',
-        'api::recette.search.search'
+        'api::recette.search.search',
+        'plugin::users-permissions.user.find',
+        'plugin::users-permissions.user.findOne'
       ];
       for (const action of publicPermissions) {
         const p = await strapi.db.query('plugin::users-permissions.permission').findOne({

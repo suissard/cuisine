@@ -7,9 +7,11 @@ export default {
     try {
       const data = ctx.request.body;
 
-      const entries = await strapi.entityService.findMany('api::recette.recette', {
-        populate: {
+      // Utilisation de documentService recommandé dans Strapi 5
+      const entries = await strapi.documents('api::recette.recette').findMany({
+        populate: data.populate || {
           categories: true,
+          author: true,
           materiel_global: true,
           difficulte: true,
           ingredients: {
@@ -33,7 +35,9 @@ export default {
 
       ctx.body = { data: entries };
     } catch (err) {
-      ctx.body = err;
+      console.error('Search error:', err);
+      ctx.body = { error: err.message || 'Internal Server Error' };
+      ctx.status = 500;
     }
   }
 };

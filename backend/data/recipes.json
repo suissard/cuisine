@@ -109,5 +109,121 @@
         "temps": { "preparation_min": 2, "cuisson_min": 0, "repos_min": 1440 }
       }
     ]
+  },
+  {
+    "titre": "Soupe froide au concombre",
+    "description": "Facile d’exécution, bonne à déguster l'été.",
+    "origine": "Inconnue",
+    "portions": 4,
+    "degustation": "Froid",
+    "categories": ["Entrée", "Soupe"],
+    "materiel_global": ["Mixeur", "Couteau d'office", "Réfrigérateur"],
+    "difficulte": {
+      "preparation": 1,
+      "cuisson": 1,
+      "repos": 1
+    },
+    "ingredients": [
+      {
+        "ingredient": {"nom": "Concombre", "categorie": "Légumes"},
+        "valeur": 2,
+        "unite": "pièces",
+        "sous_type": ""
+      },
+      {
+        "ingredient": {"nom": "Tomate", "categorie": "Légumes"},
+        "valeur": 2,
+        "unite": "pièces",
+        "sous_type": ""
+      },
+      {
+        "ingredient": {"nom": "Yaourt grec", "categorie": "Laitier"},
+        "valeur": 2,
+        "unite": "pots",
+        "sous_type": ""
+      },
+      {
+        "ingredient": {"nom": "Tabasco", "categorie": "Assaisonnement"},
+        "valeur": 0,
+        "unite": "quelques gouttes",
+        "sous_type": ""
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "description": "Epluchez les concombres, coupez en deux, enlevez les grains.",
+        "materiel_utilise": [
+          { "materiel": {"nom": "Couteau d'office"}, "texte_associe": "Epluchez les concombres" }
+        ],
+        "temps": { "preparation_min": 5, "cuisson_min": 0, "repos_min": 0 }
+      },
+      {
+        "ordre": 2,
+        "description": "Mettez ces ingrédients avec le yaourt dans un mixeur. Mixez le tout.",
+        "materiel_utilise": [
+          { "materiel": {"nom": "Mixeur"}, "texte_associe": "Mixez le tout" }
+        ],
+        "temps": { "preparation_min": 5, "cuisson_min": 0, "repos_min": 0 }
+      }
+    ]
+  },
+  {
+    "titre": "Pâtes aux courgettes et chèvre",
+    "description": "Sauce chaude au chèvre et amandes.",
+    "origine": "Inconnue",
+    "portions": 4,
+    "degustation": "Chaud",
+    "categories": ["Plat principal"],
+    "materiel_global": ["Poêle", "Casserole"],
+    "difficulte": {
+      "preparation": 2,
+      "cuisson": 2,
+      "repos": 1
+    },
+    "ingredients": [
+      {
+        "ingredient": {"nom": "Tagliatelles", "categorie": "Féculent"},
+        "valeur": 300,
+        "unite": "g",
+        "sous_type": ""
+      },
+      {
+        "ingredient": {"nom": "Courgette", "categorie": "Légumes"},
+        "valeur": 500,
+        "unite": "g",
+        "sous_type": ""
+      },
+      {
+        "ingredient": {"nom": "Chèvre frais", "categorie": "Laitier"},
+        "valeur": 150,
+        "unite": "g",
+        "sous_type": ""
+      },
+      {
+        "ingredient": {"nom": "Poudre d'amandes", "categorie": "Autre"},
+        "valeur": 50,
+        "unite": "g",
+        "sous_type": ""
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "description": "Coupez les courgettes en dés. Sautez les courgettes 10 min dans l'huile.",
+        "materiel_utilise": [
+          { "materiel": {"nom": "Poêle"}, "texte_associe": "Sautez les courgettes" }
+        ],
+        "temps": { "preparation_min": 5, "cuisson_min": 10, "repos_min": 0 }
+      },
+      {
+        "ordre": 2,
+        "description": "Faites cuire les pâtes 6 min. Egouttez.",
+        "materiel_utilise": [
+          { "materiel": {"nom": "Casserole"}, "texte_associe": "Faites cuire les pâtes" }
+        ],
+        "temps": { "preparation_min": 2, "cuisson_min": 6, "repos_min": 0 }
+      }
+    ]
   }
 ]
