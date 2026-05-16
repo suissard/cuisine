@@ -1,0 +1,193 @@
+{
+  "titre": "Solianka (soupe russe)",
+  "description": "Une des références de la cuisine russe, facile à préparer et extrêmement savoureuse.",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 15,
+  "temps_cuisson": 25,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "soupe",
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Viande de bœuf cuite (ou porc, poisson)",
+        "categorie": "Viande"
+      },
+      "valeur": 300,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Saucisses fumées",
+        "categorie": "Autre"
+      },
+      "valeur": 2,
+      "unite": "ou 3",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Bouillon",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "litre",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Cornichons",
+        "categorie": "Autre"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Chou fermenté",
+        "categorie": "Autre"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sauce tomate",
+        "categorie": "Légumes"
+      },
+      "valeur": 2,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile d’olive (ou 4 olives)",
+        "categorie": "Épicerie"
+      },
+      "valeur": 1,
+      "unite": "cuillère à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Câpres (ou huile de câpre)",
+        "categorie": "Épicerie"
+      },
+      "valeur": 1,
+      "unite": "cuillère à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Feuille de laurier",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Oignon",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "morceau",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel, poivre, huile, persil, poivron",
+        "categorie": "Légumes"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Pelez les cornichons et coupez-les en petits cubes. Réservez la peau.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Dans une casserole, faites chauffer un peu d’huile, ajoutez l’oignon émincé, les cubes de cornichon et le chou fermenté. Laissez revenir quelques minutes.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Versez le bouillon dans la casserole, ajoutez du poivre et la feuille de laurier. Portez à ébullition.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Coupez les saucisses fumées en rondelles et la viande en morceaux. Ajoutez-les dans la casserole. Laissez cuire 5 minutes.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Ajoutez les câpres, l’olive (ou l’huile d’olive), le sel et éventuellement les peaux de cornichon. Prolongez la cuisson 10 minutes à ébullition.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Éteignez le feu et laissez reposer 15 à 20 minutes.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Servez chaud avec du persil ciselé et une rondelle de citron. La vodka accompagne très bien cette soupe.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 25,
+        "repos_min": 0
+      }
+    }
+  ]
+}

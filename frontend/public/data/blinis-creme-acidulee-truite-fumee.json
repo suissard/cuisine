@@ -1,0 +1,183 @@
+{
+  "titre": "Blinis, crème acidulée, truite fumée",
+  "description": "Sylvie, ma grande sœur, qui, au vue des recettes, s’éclate vraiment en cuisine …",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 15,
+  "temps_cuisson": 20,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "entrée"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Pommes de terre",
+        "categorie": "Autre"
+      },
+      "valeur": 300,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œufs entiers",
+        "categorie": "Autre"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Crème fraîche épaisse",
+        "categorie": "Laitier"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": "+ pour la sauce acidulée"
+    },
+    {
+      "ingredient": {
+        "nom": "Cumin, noix de muscade",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Échalote",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile d’olive",
+        "categorie": "Épicerie"
+      },
+      "valeur": 1,
+      "unite": "trait + pour la sauce",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Ciboulette",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "quelques brins",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Jus de citron",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Tranches de truite fumée",
+        "categorie": "Poisson"
+      },
+      "valeur": 4,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel, poivre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Faire cuire les pommes de terre avec du gros sel. Les écraser en purée.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Séparez les blancs des jaunes d'œuf. Battre les blancs en neige.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Mélangez les jaunes d'œuf à la purée et assaisonnez avec sel, poivre, noix de muscade, et cumin.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Incorporez les blancs d'œuf à la pâte délicatement.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Cuire cette pâte dans une poêle pour faire les blinis.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Nappez de sauce acidulée et de lanières de truite fumée.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Pour la sauce acidulée : ciselez 1 échalote et de la ciboulette. Mélangez avec la crème, un trait d’huile d’olive, 1 jus de citron, une pincée de piment d’Espelette, sel et poivre.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 20,
+        "repos_min": 0
+      }
+    }
+  ]
+}

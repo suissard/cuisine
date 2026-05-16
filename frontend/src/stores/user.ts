@@ -40,6 +40,74 @@ export const useUserStore = defineStore('user', () => {
     localStorage.setItem('jwt_token', jwtToken)
     error.value = null
   }
+
+  // Connexion API
+  async function login(identifier: string, password: string) {
+    setLoading(true)
+    setError(null)
+    try {
+      const response = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/auth/local`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ identifier, password })
+      })
+      
+      const data = await response.json()
+      
+      if (!response.ok) {
+        throw new Error(data.error?.message || 'Identifiants invalides')
+      }
+      
+      setAuth({
+        id: data.user.id,
+        username: data.user.username,
+        email: data.user.email,
+        role: data.user.role?.name || 'user',
+        preferences: data.user.preferences || { theme: 'system', dietaryRestrictions: [], newsletter: false }
+      }, data.jwt)
+      
+      return true
+    } catch (err: any) {
+      setError(err.message)
+      return false
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  // Inscription API
+  async function register(username: string, email: string, password: string) {
+    setLoading(true)
+    setError(null)
+    try {
+      const response = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/auth/local/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, password })
+      })
+      
+      const data = await response.json()
+      
+      if (!response.ok) {
+        throw new Error(data.error?.message || 'Erreur lors de l\'inscription')
+      }
+      
+      setAuth({
+        id: data.user.id,
+        username: data.user.username,
+        email: data.user.email,
+        role: data.user.role?.name || 'user',
+        preferences: data.user.preferences || { theme: 'system', dietaryRestrictions: [], newsletter: false }
+      }, data.jwt)
+      
+      return true
+    } catch (err: any) {
+      setError(err.message)
+      return false
+    } finally {
+      setLoading(false)
+    }
+  }
   
   // Mettre à jour des données partielles
   function updateUserData(updates: Partial<User>) {
@@ -88,6 +156,8 @@ export const useUserStore = defineStore('user', () => {
     hasDietaryRestrictions,
     // Actions
     setAuth, 
+    login,
+    register,
     updateUserData,
     updatePreferences,
     setLoading,

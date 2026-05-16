@@ -1,0 +1,136 @@
+{
+  "titre": "Crousti moelleux aux framboises",
+  "description": "Par Françoise Clémenceau, dans un super moule offert par Baptiste pour Noël 2021",
+  "origine": "Inconnue",
+  "portions": "4 à 6 pers",
+  "temps_preparation": 15,
+  "temps_cuisson": 35,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "dessert"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Beurre",
+        "categorie": "Laitier"
+      },
+      "valeur": 50,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sucre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 150,
+      "unite": "g",
+      "sous_type": "(200 g initialement)"
+    },
+    {
+      "ingredient": {
+        "nom": "Flocons d’avoine (ou spéculoos écrasés)",
+        "categorie": "Autre"
+      },
+      "valeur": 150,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œufs",
+        "categorie": "Autre"
+      },
+      "valeur": 4,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Framboises (fraîches ou surgelées)",
+        "categorie": "Autre"
+      },
+      "valeur": 400,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Mascarpone",
+        "categorie": "Autre"
+      },
+      "valeur": 250,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Amandes mondées pour décoration",
+        "categorie": "Épicerie"
+      },
+      "valeur": 4,
+      "unite": "par moule (64)",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Faire fondre le beurre, ajouter 75 g de sucre, les flocons d’avoine (ou spéculoos) et un blanc d'œuf.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Amalgamez cette préparation et déposez au fond du moule en tassant bien, puis répartir les framboises (non décongelées si congelées).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Dans un cul-de-poule, battre les œufs restants (3 plus 1 jaune) avec les 75 g de sucre restant, ajoutez le mascarpone et déposez le tout sur les framboises.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Cuire 35 à 40 min à 180°C.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Servir frais. Décoration : 4 amandes mondées (ou amandes effilées) autour de la framboise pour faire comme une fleur.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 35,
+        "repos_min": 0
+      }
+    }
+  ]
+}

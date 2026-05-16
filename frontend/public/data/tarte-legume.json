@@ -1,0 +1,127 @@
+{
+  "titre": "Tarte aux légumes du soleil",
+  "description": "Une tarte colorée et savoureuse, parfaite pour un pique-nique.",
+  "origine": "Inconnue",
+  "portions": 6,
+  "temps_preparation": 20,
+  "temps_cuisson": 35,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Pâte brisée",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "rouleau",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Courgette",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "pièce",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Tomate",
+        "categorie": "Légumes"
+      },
+      "valeur": 2,
+      "unite": "pièces",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Oignon rouge",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "pièce",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Crème fraîche",
+        "categorie": "Laitier"
+      },
+      "valeur": 20,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œufs",
+        "categorie": "Autre"
+      },
+      "valeur": 3,
+      "unite": "pièces",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Dérouler la pâte dans un moule et piquer le fond.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 20,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Couper la courgette, les tomates et l'oignon en rondelles fines.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Battre les œufs avec la crème, saler et poivrer.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Disposer les légumes sur le fond de tarte, verser le mélange œufs-crème.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Enfourner 35 minutes à 180°C.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 35,
+        "repos_min": 0
+      }
+    }
+  ]
+}

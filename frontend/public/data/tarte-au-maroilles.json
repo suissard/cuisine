@@ -1,0 +1,109 @@
+{
+  "titre": "Tarte au maroilles",
+  "description": "Aimer le nord, se balader dans le vieux Lille et faire un raid chez un fromager",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 15,
+  "temps_cuisson": 35,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat",
+    "tarte"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Pâte feuilletée",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "rouleau",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Maroilles",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "½",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Crème fraîche épaisse",
+        "categorie": "Laitier"
+      },
+      "valeur": 20,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œufs",
+        "categorie": "Autre"
+      },
+      "valeur": 3,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel, poivre, noix muscade râpée",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Préchauffez le four à th 6 (180°). Étalez la pâte avec son papier de cuisson dans un moule à tarte (18 cm de diamètre). Coupez le maroilles en tranches.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Dans une jatte, battez les œufs à la fourchette, incorporez la crème, salez légèrement, poivrez et parfumez de muscade, mélangez et versez sur la pâte. Couvrez de maroilles et enfournez pour 35 min.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Servez tiède avec une salade de mâche.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Le bon accord : une bière blonde (jenlain, goudale ou trois monts).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 35,
+        "repos_min": 0
+      }
+    }
+  ]
+}

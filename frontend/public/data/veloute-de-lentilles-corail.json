@@ -1,0 +1,127 @@
+{
+  "titre": "Velouté de lentilles corail et légumes",
+  "description": "Riche en protéines, fibres, vitamines, minéraux",
+  "origine": "Inconnue",
+  "portions": 1,
+  "temps_preparation": 5,
+  "temps_cuisson": 15,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "soupe",
+    "regime"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Lentilles corail cuites",
+        "categorie": "Légumes"
+      },
+      "valeur": 80,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Carottes",
+        "categorie": "Légumes"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Poireau",
+        "categorie": "Autre"
+      },
+      "valeur": 50,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Lait de coco léger",
+        "categorie": "Laitier"
+      },
+      "valeur": 50,
+      "unite": "ml",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Bouillon de légumes",
+        "categorie": "Autre"
+      },
+      "valeur": 200,
+      "unite": "ml",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Curcuma + poivre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 1,
+      "unite": "pincée",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile d’olive",
+        "categorie": "Épicerie"
+      },
+      "valeur": 1,
+      "unite": "cuillère à café",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Faire revenir le poireau et les carottes émincés dans l’huile d’olive.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 5,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Ajouter les lentilles corail, le bouillon de légumes et les épices. Cuire 15 min.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Mixer avec le lait de coco. Servir chaud.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Apport total : ~20 g de protéines, 8 g de fibres, ~250 kcal. Astuce : ajouter une cuillère de levure maltée pour un boost de vitamines B et un goût umami",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 15,
+        "repos_min": 0
+      }
+    }
+  ]
+}

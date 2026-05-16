@@ -1,0 +1,50 @@
+{
+  "titre": "NOM_DE_LA_RECETTE (ex: Lasagnes à la Bolognaise)",
+  "description": "COURTE_DESCRIPTION (Une phrase résumant le plat)",
+  "origine": "SOURCE_OU_REGION (ex: Italie, Grand-mère, Site Web)",
+  "portions": "NOMBRE_DE_PERSONNES (Chiffre entier, ex: 4)",
+  "temps_preparation": "TEMPS_EN_MINUTES (ex: 20)",
+  "temps_cuisson": "TEMPS_EN_MINUTES (ex: 45)",
+  "temps_repos": "TEMPS_EN_MINUTES (ex: 0)",
+  "degustation": "TEMPERATURE (Chaud, Froid, Ambiant)",
+  "categories": [
+    "CATEGORIE_1 (ex: Plat principal)",
+    "CATEGORIE_2 (ex: Italien)"
+  ],
+  "materiel_global": [
+    "LISTE_DU_MATERIEL (ex: Four, Poêle, Saladier)"
+  ],
+  "difficulte": {
+    "preparation": "NOTE_1_A_5 (1 = Très facile, 5 = Technique)",
+    "cuisson": "NOTE_1_A_5 (1 = Rapide, 5 = Longue surveillance)",
+    "repos": "NOTE_1_A_5 (1 = Aucun, 5 = Très long)"
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "NOM_INGREDIENT (ex: Farine)",
+        "categorie": "TYPE (ex: Épicerie, Légumes, Laitier)"
+      },
+      "valeur": "QUANTITE_NUMERIQUE (ex: 500)",
+      "unite": "UNITE_DE_MESURE (ex: g, cl, pièces, cuillère à soupe)",
+      "sous_type": "PRECISION_OPTIONNELLE (ex: T55, bio, haché)"
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": "NUMERO_ETAPE (ex: 1)",
+      "description": "INSTRUCTIONS_DETAILLEES (Que faut-il faire ?)",
+      "materiel_utilise": [
+        {
+          "materiel": "NOM_DU_MATERIEL (ex: Casserole)",
+          "texte_associe": "PARTIE_DU_TEXTE_A_SURLIGNER (ex: Faire bouillir l'eau)"
+        }
+      ],
+      "temps": {
+        "preparation_min": "DUREE_EN_MINUTES (ex: 10)",
+        "cuisson_min": "DUREE_EN_MINUTES (ex: 20)",
+        "repos_min": "DUREE_EN_MINUTES (ex: 0)"
+      }
+    }
+  ]
+}

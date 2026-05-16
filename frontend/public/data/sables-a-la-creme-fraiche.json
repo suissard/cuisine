@@ -1,0 +1,184 @@
+{
+  "titre": "Sablés à la crème fraîche",
+  "description": "Cadeau de Claire et Jéry, appréciés pour leur légèreté et les formes sympathiques",
+  "origine": "Inconnue",
+  "portions": "x pers",
+  "temps_preparation": 0,
+  "temps_cuisson": 10,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "dessert"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Farine",
+        "categorie": "Épicerie"
+      },
+      "valeur": 250,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Beurre",
+        "categorie": "Laitier"
+      },
+      "valeur": 80,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sucre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 90,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Crème fraîche épaisse",
+        "categorie": "Laitier"
+      },
+      "valeur": 20,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Levure chimique",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "¼ de sachet",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sucre vanillé",
+        "categorie": "Épicerie"
+      },
+      "valeur": 1,
+      "unite": "sachet",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Jaune d’œuf",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Zeste de citron non traité",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Confiture au choix",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "pot",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Dans un bol mélangez la farine avec la levure chimique, le sucre vanillé et le sucre.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Ajoutez le beurre mou coupé en morceaux, le jaune d'œuf, la crème fraîche et le zeste de citron.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Travaillez tous les ingrédients pour obtenir une pâte souple.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Formez une boule, enveloppez-la de film alimentaire et mettez-la au moins 3 heures au réfrigérateur (de préférence toute la nuit).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Préchauffez le four à 150°C (thermostat 5).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Étalez la pâte sur 5 mm d’épaisseur puis découpez-la à l’aide d’un emporte-pièce. Posez les biscuits sur une plaque de four tapissée de papier sulfurisé.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Enfournez 10 min.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 8,
+      "description": "Servez avec de la confiture (ou nature).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 10,
+        "repos_min": 0
+      }
+    }
+  ]
+}

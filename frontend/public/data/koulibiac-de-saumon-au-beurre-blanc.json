@@ -1,0 +1,220 @@
+{
+  "titre": "Koulibiac de saumon au beurre blanc",
+  "description": "À nouveau…Sylvie, ma grande sœur, pour le plaisir de ses invités et de René",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 15,
+  "temps_cuisson": 30,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Saumon sans peau",
+        "categorie": "Poisson"
+      },
+      "valeur": 500,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Riz basmati cuit et froid",
+        "categorie": "Épicerie"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Champignons de Paris",
+        "categorie": "Épicerie"
+      },
+      "valeur": 180,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Beurre",
+        "categorie": "Laitier"
+      },
+      "valeur": 20,
+      "unite": "g",
+      "sous_type": "+ 150 g pour sauce"
+    },
+    {
+      "ingredient": {
+        "nom": "Oignon jaune",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œufs durs",
+        "categorie": "Autre"
+      },
+      "valeur": 4,
+      "unite": "+ 1 jaune pour dorer",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Persil haché",
+        "categorie": "Légumes"
+      },
+      "valeur": 3,
+      "unite": "c. à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Aneth ciselée",
+        "categorie": "Épicerie"
+      },
+      "valeur": 2,
+      "unite": "c. à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Pâte feuilletée",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "rouleau",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Échalote pour sauce",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "(ou plus)",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Vin blanc",
+        "categorie": "Autre"
+      },
+      "valeur": 5,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Jus de citron jaune",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel fin, poivre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Faire durcir les 4 œufs. Équeutez et lavez les champignons. Sortez le saumon du réfrigérateur.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Faire chauffer les 20 g de beurre et l'huile d’olive dans la poêle sur feu vif. Mettre l’oignon ciselé, réduire le feu. Ajoutez les champignons coupés en dés ou émincés et remontez le feu. Salez, poivrez, ajoutez une noix de beurre.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Taillez le saumon en gros cubes et le mettre dans un saladier. Coupez les œufs menus et les mettre dans un autre saladier. Ajoutez le riz, les champignons, les oignons, le persil, l’aneth le sel et le poivre et mettez les dans un 3ème saladier.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Étalez la pâte feuilletée. Mettre les œufs en forme de rectangle au milieu de la pâte, puis dessus la farce aux champignons et le riz et enfin les cubes de saumon. Salez, poivrez, persil et aneth.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Enroulez le tout pour faire comme un rôti en pinçant les deux extrémités enduites d’eau au préalable, pour les souder.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Badigeonnez avec le jaune d’œuf pour dorer la pâte, retournez-la pour laisser voir le côté sans plis et badigeonnez à nouveau. Faites des traits avec un couteau. Enfournez à 220°C.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Pour la sauce beurre blanc : Dans une casserole, mettre l’échalote ciselée, le vin blanc, le jus de citron. Faire réduire. Incorporer le beurre froid en cubes en fouettant. Assaisonner.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 8,
+      "description": "Dégustez avec la sauce beurre blanc et une salade verte ou de la mâche.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 30,
+        "repos_min": 0
+      }
+    }
+  ]
+}

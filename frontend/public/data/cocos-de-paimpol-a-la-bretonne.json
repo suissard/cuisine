@@ -1,0 +1,155 @@
+{
+  "titre": "Cocos de Paimpol à la bretonne",
+  "description": "Après avoir épluché le sac de 10 kgs, cuisson façon Françoise, cocos trop bons….",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 65,
+  "temps_cuisson": 45,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Grains de coco de Paimpol",
+        "categorie": "Autre"
+      },
+      "valeur": 400,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Oignons émincés",
+        "categorie": "Légumes"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Bouillon de pot au feu",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "¼ de litre",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Ail",
+        "categorie": "Légumes"
+      },
+      "valeur": 4,
+      "unite": "ou 5 gousses",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Échalotes",
+        "categorie": "Légumes"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Tomates fraîches",
+        "categorie": "Légumes"
+      },
+      "valeur": 250,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Petit poivron vert",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Beurre, poivre, sel",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Faire doucement rissoler au beurre 100 g d’oignons émincés, arrosez avec ¼ de litre de bouillon de pot au feu.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 65,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Faire bouillir et ajoutez 4 à 5 gousses d’ail et 2 échalotes.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Ajoutez 250 g de tomates fraîches en dés (si besoin, possible de prendre en boite de conserve mais de la marque “Mutti”) et un petit poivron en morceaux, faire bouillir.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Ajoutez 400 g de grains de cocos de Paimpol, salez peu et poivrez beaucoup.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Veillez à ce que les haricots soient couverts de liquide et laissez cuire 40 à 50 min; le jus doit être réduit et les légumes tendres sans être écrasés.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Ref : http://trouver-en-bretagne.com/recettes/cocos-de-paimpol-a-la-bretonne-rc-34.html",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 45,
+        "repos_min": 0
+      }
+    }
+  ]
+}

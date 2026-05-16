@@ -170,25 +170,51 @@ export default {
       console.log('Seeding complete!');
 
     // Make public API readable
-    const role = await strapi.db.query('plugin::users-permissions.role').findOne({
+    const publicRole = await strapi.db.query('plugin::users-permissions.role').findOne({
       where: { type: 'public' },
       populate: ['permissions']
     });
-    if (role) {
+    if (publicRole) {
       const publicPermissions = [
         'api::recette.recette.find',
         'api::recette.recette.findOne',
+        'api::recette.recette.import',
         'api::recette.search.search',
         'plugin::users-permissions.user.find',
         'plugin::users-permissions.user.findOne'
       ];
       for (const action of publicPermissions) {
         const p = await strapi.db.query('plugin::users-permissions.permission').findOne({
-          where: { role: role.id, action }
+          where: { role: publicRole.id, action }
         });
         if (!p) {
           await strapi.db.query('plugin::users-permissions.permission').create({
-            data: { role: role.id, action }
+            data: { role: publicRole.id, action }
+          });
+        }
+      }
+    }
+
+    // Set Authenticated Role permissions (Create/Import)
+    const authenticatedRole = await strapi.db.query('plugin::users-permissions.role').findOne({
+      where: { type: 'authenticated' },
+      populate: ['permissions']
+    });
+    if (authenticatedRole) {
+      const authPermissions = [
+        'api::recette.recette.find',
+        'api::recette.recette.findOne',
+        'api::recette.recette.create',
+        'api::recette.recette.import',
+        'api::recette.search.search'
+      ];
+      for (const action of authPermissions) {
+        const p = await strapi.db.query('plugin::users-permissions.permission').findOne({
+          where: { role: authenticatedRole.id, action }
+        });
+        if (!p) {
+          await strapi.db.query('plugin::users-permissions.permission').create({
+            data: { role: authenticatedRole.id, action }
           });
         }
       }

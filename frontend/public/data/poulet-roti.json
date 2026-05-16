@@ -1,0 +1,118 @@
+{
+  "titre": "Poulet rôti aux herbes",
+  "description": "Un grand classique familial, croustillant à l'extérieur et tendre à l'intérieur.",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 15,
+  "temps_cuisson": 1,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Poulet fermier",
+        "categorie": "Viande"
+      },
+      "valeur": 1,
+      "unite": "pièce",
+      "sous_type": "(1,5 kg)"
+    },
+    {
+      "ingredient": {
+        "nom": "Ail",
+        "categorie": "Légumes"
+      },
+      "valeur": 4,
+      "unite": "g",
+      "sous_type": "ousses"
+    },
+    {
+      "ingredient": {
+        "nom": "Thym frais",
+        "categorie": "Autre"
+      },
+      "valeur": 3,
+      "unite": "branches",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile d'olive",
+        "categorie": "Épicerie"
+      },
+      "valeur": 3,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Pommes de terre",
+        "categorie": "Autre"
+      },
+      "valeur": 6,
+      "unite": "pièces",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Préchauffer le four à 200°C.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Frotter le poulet avec l'huile d'olive, saler et poivrer.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Glisser l'ail et le thym à l'intérieur du poulet.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Disposer le poulet dans un plat, ajouter les pommes de terre coupées en quartiers autour.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Enfourner 1h20 en arrosant régulièrement.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 1,
+        "repos_min": 0
+      }
+    }
+  ]
+}

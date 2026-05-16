@@ -1,0 +1,239 @@
+{
+  "titre": "Bortsch et Pirojki",
+  "description": "Soupe d’Europe centrale, betterave impérative pour la couleur; Prévoir du temps",
+  "origine": "Inconnue",
+  "portions": 6,
+  "temps_preparation": 40,
+  "temps_cuisson": 2,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "soupe",
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Betteraves crues",
+        "categorie": "Autre"
+      },
+      "valeur": 500,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Céleri rave",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "½",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Petit chou",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Poireaux",
+        "categorie": "Autre"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Tomates",
+        "categorie": "Légumes"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Macreuse de bœuf",
+        "categorie": "Autre"
+      },
+      "valeur": 600,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Crème épaisse",
+        "categorie": "Laitier"
+      },
+      "valeur": 10,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Jus de citron",
+        "categorie": "Légumes"
+      },
+      "valeur": 0,
+      "unite": "½",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Pour les pirojki :",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Champignons de Paris",
+        "categorie": "Épicerie"
+      },
+      "valeur": 200,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Oignons",
+        "categorie": "Légumes"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile",
+        "categorie": "Épicerie"
+      },
+      "valeur": 1,
+      "unite": "cuillère à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œuf + 1 jaune",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "+ 1",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Aneth",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "bouquet",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel, poivre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Pelez les betteraves et le céleri. Coupez-les en gros cubes. Éliminez les premières feuilles du chou, coupez-les en lanières. Nettoyez les poireaux, coupez-les en tronçons. Épépinez les tomates, concassez-les. Coupez la viande en dés.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 40,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Mettez la viande dans un faitout avec 2,5 l d’eau, salez, poivrez et portez à ébullition. Laissez cuire à frémissements 1h puis ajoutez tous les légumes. Laissez frémir encore 1h.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Pendant ce temps, pelez et émincez les oignons, brossez et émincez les champignons, faites-les revenir à l’huile dans une poêle 5 min, réservez.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Une fois la soupe cuite, filtrez le bouillon. Récupérez la viande et le chou, remettez les autres légumes dans le bouillon. Dans un saladier, travaillez la viande à la fourchette. Ajoutez le chou, les champignons et les oignons, l’aneth ciselé, salez et poivrez. Ajoutez l’œuf entier, mélangez. Préchauffez le four à 180° (th 6).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Déroulez la pâte. Découpez-y 6 disques avec un bol retourné ou un emporte-pièce. Garnissez-les de farce à la viande, repliez en chausson. Soudez les bords, dorez au jaune d’œuf. Posez les pirojki sur la plaque du four tapissée de papier sulfurisé, enfournez pour 15 min.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Dans un bol, mélangez la crème et le jus de citron. Faites réchauffer la soupe sur feu doux. Versez-la dans de grands bols, garnissez de 1 cuillère de crème au citron et servez chaud avec les pirojki.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Notre bon accord : un ventoux rouge (vallée du Rhône)",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 8,
+      "description": "Les pirojkis peuvent être servis tout seuls en entrée. Bons baisers de Russie",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 2,
+        "repos_min": 0
+      }
+    }
+  ]
+}

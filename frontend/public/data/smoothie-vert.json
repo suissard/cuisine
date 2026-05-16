@@ -1,0 +1,109 @@
+{
+  "titre": "Smoothie vert énergie",
+  "description": "Un smoothie vitaminé pour bien commencer la journée.",
+  "origine": "Inconnue",
+  "portions": 1,
+  "temps_preparation": 5,
+  "temps_cuisson": 0,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "boisson",
+    "dessert"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Épinards frais",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "poignée",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Banane",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "pièce",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Kiwi",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "pièce",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Lait d'amande",
+        "categorie": "Épicerie"
+      },
+      "valeur": 150,
+      "unite": "ml",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Graines de chia",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "cuillère à café",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Peler la banane et le kiwi, les couper en morceaux.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 5,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Mettre tous les ingrédients dans un blender.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Mixer jusqu'à obtenir une texture lisse.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Servir immédiatement.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+services:
+  strapi:
+    ports:
+      - "${STRAPI_PORT}:${STRAPI_PORT}"
+    environment:
+      - NODE_ENV=production
+      - HOST=${STRAPI_HOST}
+      - PORT=${STRAPI_PORT}
+      - APP_KEYS=${APP_KEYS}
+      - API_TOKEN_SALT=${API_TOKEN_SALT}
+      - ADMIN_JWT_SECRET=${ADMIN_JWT_SECRET}
+      - TRANSFER_TOKEN_SALT=${TRANSFER_TOKEN_SALT}
+      - DATABASE_CLIENT=${DATABASE_CLIENT}
+      - DATABASE_FILENAME=${DATABASE_FILENAME}
+      - JWT_SECRET=${JWT_SECRET}
+    command: npm run start
+
+  frontend:
+    ports:
+      - "${FRONTEND_PORT}:80"
+    environment:
+      - VITE_STRAPI_URL=${VITE_STRAPI_URL}

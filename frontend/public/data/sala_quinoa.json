@@ -1,0 +1,109 @@
+{
+  "titre": "Salade de quinoa arc-en-ciel",
+  "description": "Une salade fraîche et complète, idéale pour l'été.",
+  "origine": "Inconnue",
+  "portions": 2,
+  "temps_preparation": 15,
+  "temps_cuisson": 12,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "entrée",
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Quinoa",
+        "categorie": "Autre"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Poivron rouge",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "pièce",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Concombre",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "/2 pièce",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Feta",
+        "categorie": "Autre"
+      },
+      "valeur": 80,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Jus de citron",
+        "categorie": "Légumes"
+      },
+      "valeur": 2,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Cuire le quinoa dans l'eau bouillante salée 12 minutes. Égoutter et laisser refroidir.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Couper le poivron et le concombre en petits dés.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Émietter la feta.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Mélanger tous les ingrédients, assaisonner avec le jus de citron, sel et poivre.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 12,
+        "repos_min": 0
+      }
+    }
+  ]
+}

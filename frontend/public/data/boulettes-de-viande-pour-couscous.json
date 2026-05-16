@@ -1,0 +1,134 @@
+{
+  "titre": "Boulettes de viande pour couscous",
+  "description": "Recette de Virginie Pindeler, chez Nini et Mimi, convivialité, originalité et art de la table",
+  "origine": "Inconnue",
+  "portions": 6,
+  "temps_preparation": 15,
+  "temps_cuisson": 15,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Chair à saucisse (mouton, veau)",
+        "categorie": "Autre"
+      },
+      "valeur": 300,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Viande hachée",
+        "categorie": "Viande"
+      },
+      "valeur": 150,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œuf entier",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Persil, ail",
+        "categorie": "Légumes"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Chapelure (lait et pain de mie)",
+        "categorie": "Laitier"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Farine",
+        "categorie": "Épicerie"
+      },
+      "valeur": 1,
+      "unite": "ou 2 cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Bouillon de poule ou sauce de couscous",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel, poivre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Épices : paprika, cumin, spignol, muscade, piment de cayenne, raz el hanout",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Mélangez le tout avec les épices.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Bien se laver les mains, puis faire des boulettes que l’on passe dans la farine.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Les faire frire de chaque côté et terminer la cuisson dans un bouillon de couscous ou autre.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 15,
+        "repos_min": 0
+      }
+    }
+  ]
+}

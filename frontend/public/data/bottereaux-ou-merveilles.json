@@ -1,0 +1,174 @@
+{
+  "titre": "Bottereaux ou merveilles",
+  "description": "Dans les Landes, la tante Simone nous régalait de ses merveilleux bottereaux",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 3,
+  "temps_cuisson": 0,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "dessert"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Farine",
+        "categorie": "Épicerie"
+      },
+      "valeur": 200,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sucre cristallisé",
+        "categorie": "Épicerie"
+      },
+      "valeur": 225,
+      "unite": "g",
+      "sous_type": "(25 g dans la pâte + 200 g pour enrober)"
+    },
+    {
+      "ingredient": {
+        "nom": "Lait",
+        "categorie": "Laitier"
+      },
+      "valeur": 250,
+      "unite": "ml",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œuf",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Beurre salé",
+        "categorie": "Laitier"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Levure de boulanger",
+        "categorie": "Épicerie"
+      },
+      "valeur": 1,
+      "unite": "cuillère à café",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Eau de vie",
+        "categorie": "Autre"
+      },
+      "valeur": 5,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Eau tiède",
+        "categorie": "Autre"
+      },
+      "valeur": 5,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile pour friture",
+        "categorie": "Épicerie"
+      },
+      "valeur": 50,
+      "unite": "cl",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Dans un verre, délayer la levure de boulanger dans l’eau tiède. Coupez le beurre en petits morceaux, le laissez en attente.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 3,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Déposez la farine dans un grand saladier avec 25 g de sucre, l'œuf, l’alcool puis la levure. Mélangez énergiquement pendant 10 minutes jusqu’à l’obtention d’une boule de pâte.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Étalez cette pâte sur 1 cm d’épaisseur environ, répartir les petits morceaux de beurre sur toute sa surface. Appuyez avec les doigts afin de bien les incorporer à la pâte.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Pliez la pâte en trois en enfermant le beurre à l’intérieur, appuyez à nouveau avec les doigts, puis reconstituez une boule en ajoutant un peu de farine si besoin. Laisser reposer au moins 3 heures dans un endroit chaud, à l’abri des courants d’air, en la recouvrant d’un torchon épais.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Étalez la pâte jusqu’à ce qu’elle fasse 5 millimètres d’épaisseur puis la découper en losanges réguliers.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Faire chauffer l’huile, y déposer délicatement les bottereaux par 5 ou 6. Les retourner dès qu’une face brunit et les sortir dès qu’ils remontent à la surface.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Les déposer sur du papier absorbant puis les saupoudrer de sucre. Servir bien chauds.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    }
+  ]
+}

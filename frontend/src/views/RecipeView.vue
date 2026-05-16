@@ -148,7 +148,7 @@ const totalRepos = computed(() => {
 onMounted(async () => {
   const id = route.params.id;
   try {
-    const res = await fetch('http://localhost:1337/api/recettes/search', {
+    const res = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/recettes/search`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -173,7 +173,7 @@ onMounted(async () => {
       recette.value = data.data[0];
     } else {
       // Fallback si c'est un ID numérique classique
-      const resFallback = await fetch('http://localhost:1337/api/recettes/search', {
+      const resFallback = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/recettes/search`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

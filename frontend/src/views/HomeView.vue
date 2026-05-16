@@ -158,7 +158,7 @@ const getGradient = (id: string | number) => {
 onMounted(async () => {
   recipeStore.setLoading(true)
   try {
-    const res = await fetch('http://localhost:1337/api/recettes/search', {
+    const res = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/recettes/search`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({})

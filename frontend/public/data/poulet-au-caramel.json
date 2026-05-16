@@ -1,0 +1,225 @@
+{
+  "titre": "Poulet au caramel",
+  "description": "Retour du voyage en Nouvelle Calédonie chez Michèle, la sœur de mamie Jeannette",
+  "origine": "Inconnue",
+  "portions": 6,
+  "temps_preparation": 40,
+  "temps_cuisson": 30,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Poulet (hauts de cuisses et cuisses)",
+        "categorie": "Viande"
+      },
+      "valeur": 0,
+      "unite": "coupé en 4",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Oignons jaunes",
+        "categorie": "Légumes"
+      },
+      "valeur": 7,
+      "unite": "-8",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sucre semoule",
+        "categorie": "Épicerie"
+      },
+      "valeur": 5,
+      "unite": "cuillères à café",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Nuoc mam",
+        "categorie": "Autre"
+      },
+      "valeur": 4,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sauce soja ou tamari",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "black soy supérieur",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Vinaigre d’alcool",
+        "categorie": "Autre"
+      },
+      "valeur": 4,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Coriandre fraîche",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Petits oignons verts ou ciboulette",
+        "categorie": "Légumes"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile",
+        "categorie": "Épicerie"
+      },
+      "valeur": 3,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Poivre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Pour le rougail :",
+        "categorie": "Légumes"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile d’olive",
+        "categorie": "Épicerie"
+      },
+      "valeur": 3,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Tomates",
+        "categorie": "Légumes"
+      },
+      "valeur": 3,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Ail",
+        "categorie": "Légumes"
+      },
+      "valeur": 4,
+      "unite": "belles gousses",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Cive ou ciboulette",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Coriandre fraîche",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Jus de citron vert",
+        "categorie": "Légumes"
+      },
+      "valeur": 3,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Piments oiseaux hachés",
+        "categorie": "Autre"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Coupez les oignons, les mettre à cuire dans l’huile et attendre qu’ils blanchissent (mais pas dorés).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 40,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Rajoutez le poulet et 6 cuillères de sucre avec le nuoc mam, le soja, le vinaigre et du poivre.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Laissez cuire 30 min.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Servir avec la sauce “rougail” : mélangez l’huile d’olive, les tomates coupées en 4, l’ail écrasé, la cive émincée, la coriandre, le jus de citron et les piments oiseaux.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 30,
+        "repos_min": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "titre": "Tarte au thon",
+  "description": "Par ma grande sœur Sylvie,",
+  "origine": "Inconnue",
+  "portions": 6,
+  "temps_preparation": 15,
+  "temps_cuisson": 40,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat",
+    "tarte"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Pâte brisée",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "rouleau",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Thon en boîte",
+        "categorie": "Poisson"
+      },
+      "valeur": 800,
+      "unite": "g",
+      "sous_type": "(4 boîtes de 200 g)"
+    },
+    {
+      "ingredient": {
+        "nom": "Persil",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "bouquet",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Ail",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "g",
+      "sous_type": "ousse"
+    },
+    {
+      "ingredient": {
+        "nom": "Œufs",
+        "categorie": "Autre"
+      },
+      "valeur": 6,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Crème fraîche (ou crème de soja)",
+        "categorie": "Laitier"
+      },
+      "valeur": 50,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Tomates",
+        "categorie": "Légumes"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Gruyère râpé",
+        "categorie": "Autre"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Mélangez les œufs, la crème. Y ajoutez le thon égoutté, l’ail émincé finement, le persil ciselé.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Préchauffez la pâte brisée dans le four.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Garnir de la préparation.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Ajoutez les tomates coupées en rondelles dessus (éventuellement dégorgées au sel avant).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Mettre le gruyère râpé dessus.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Enfournez à th.200° pour 40 min.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 40,
+        "repos_min": 0
+      }
+    }
+  ]
+}

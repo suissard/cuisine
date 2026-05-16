@@ -1,0 +1,220 @@
+{
+  "titre": "Couscous Anna",
+  "description": "Cuisiné par Anna et son père lors d’une fête de fin de semestre chez Emmanuelle",
+  "origine": "Inconnue",
+  "portions": 8,
+  "temps_preparation": 0,
+  "temps_cuisson": 60,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Carottes",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "kg",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Oignons",
+        "categorie": "Légumes"
+      },
+      "valeur": 4,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Tomates",
+        "categorie": "Légumes"
+      },
+      "valeur": 5,
+      "unite": "-6",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Navets",
+        "categorie": "Autre"
+      },
+      "valeur": 500,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Courgettes",
+        "categorie": "Légumes"
+      },
+      "valeur": 3,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Céleri",
+        "categorie": "Autre"
+      },
+      "valeur": 2,
+      "unite": "-3 branches",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Poivron rouge",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Coriandre",
+        "categorie": "Autre"
+      },
+      "valeur": 4,
+      "unite": "bottes",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Pois chiches (boîte 4/4)",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile d’olive",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "½ litre",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel, poivre, piment doux, colorant alimentaire",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Viande d’agneau (épaule, poitrine, collier)",
+        "categorie": "Viande"
+      },
+      "valeur": 1.5,
+      "unite": "kg",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Semoule de couscous fine",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Dans la partie basse du couscoussier faire revenir la viande dans l’huile.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Ajoutez oignons, carottes, céleri, tomates, le poivron rouge, les pois chiches. Couvrir d’eau, salez, poivrez.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Laissez mijoter pendant 1 heure (mettre de l’aluminium autour du couvercle) puis ajouter coriandre, piment doux et ½ litre d’eau.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Préparez la semoule : huile de tournesol, sel, semoule fine et eau à laisser reposer 20 min. La travailler en la frottant entre les mains.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Ajoutez la semoule travaillée au-dessus du couscoussier et continuez la cuisson encore 1 heure à partir du moment où la vapeur sort.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Dans la dernière ½ heure ajoutez les navets aux légumes. Dernier ¼ d’heure ajoutez les courgettes.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Travaillez la semoule cuite et chaude avec du beurre.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 8,
+      "description": "Servir dans un grand plat rond : semoule, puits au milieu, viande au centre et légumes par-dessus.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 60,
+        "repos_min": 0
+      }
+    }
+  ]
+}

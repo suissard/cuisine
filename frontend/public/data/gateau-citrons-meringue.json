@@ -1,0 +1,138 @@
+{
+  "titre": "Gâteau citrons meringue",
+  "description": "Fanny quand elle passait ses vacances à s’occuper de Jérémy et Manuel l’été",
+  "origine": "Inconnue",
+  "portions": 6,
+  "temps_preparation": 15,
+  "temps_cuisson": 10,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "dessert"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Pâte sablée",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œufs",
+        "categorie": "Autre"
+      },
+      "valeur": 3,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Lait concentré sucré",
+        "categorie": "Laitier"
+      },
+      "valeur": 1,
+      "unite": "tube",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Citrons",
+        "categorie": "Légumes"
+      },
+      "valeur": 3,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sucre glace",
+        "categorie": "Épicerie"
+      },
+      "valeur": 1,
+      "unite": "cuillère à soupe",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Faire cuire la pâte sablée à blanc.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Mélangez 3 jaunes d'œufs avec un tube de lait concentré.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Ajoutez 2 à 3 jus de citrons jaunes.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Mettre la préparation sur la pâte cuite.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Battre les blancs d'œufs en neige en y ajoutant la cuillère de sucre glace.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Mettre au four et bien surveiller. Le blanc doit tout juste être doré. Environ 5 min.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Important : sortir de suite avant que les blancs d'œuf deviennent noirs.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 10,
+        "repos_min": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "titre": "Terrine d’asperges vertes",
+  "description": "Par ma collègue “Prune” (Martine). Prévoir, car la terrine doit refroidir une heure",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 20,
+  "temps_cuisson": 25,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "entrée"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Petites asperges vertes (bocal possible)",
+        "categorie": "Autre"
+      },
+      "valeur": 350,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Orange",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Ciboulette",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "bouquet",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Échalote",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Crème liquide",
+        "categorie": "Laitier"
+      },
+      "valeur": 10,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œufs",
+        "categorie": "Autre"
+      },
+      "valeur": 3,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Comté",
+        "categorie": "Autre"
+      },
+      "valeur": 30,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Yaourt brassé ou velouté",
+        "categorie": "Laitier"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Piment d’Espelette en poudre",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "pincée",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Fleur de sel, poivre du moulin",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Préchauffez le four à th.6 (180°).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 20,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Ciselez la ciboulette. Pelez et ciselez l’échalote. Coupez les asperges en petits morceaux. Râpez le comté.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Dans le bol d’un mixeur, versez les asperges, la moitié de la ciboulette, l’échalote, le comté, les œufs, la crème liquide et le piment. Salez. Mixez.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Rectifiez l'assaisonnement si nécessaire.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Mettez le tout dans un saladier. Ajoutez le reste de la ciboulette et mélangez à l’aide d’une cuillère.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Versez la préparation dans une terrine préalablement beurrée ou filmée. Disposez-la dans un grand plat et versez de l’eau chaude autour. Enfournez et faites cuire au bain-marie 25 min.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Au bout de 15 min de cuisson, couvrez d’un papier d’aluminium pour éviter que la terrine ne colore trop.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 8,
+      "description": "Laissez refroidir au moins une heure après cuisson.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 9,
+      "description": "Préparez la sauce : mélangez le jus d’orange et le yaourt, salez et poivrez. Servez la terrine avec sa sauce.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 10,
+      "description": "La touche finale : pour une version encore plus aérienne, accompagnez d’une chantilly à la menthe ou au lard fumé.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 25,
+        "repos_min": 0
+      }
+    }
+  ]
+}

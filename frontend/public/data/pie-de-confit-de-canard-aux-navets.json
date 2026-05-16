@@ -1,0 +1,184 @@
+{
+  "titre": "Pie de confit de canard aux navets",
+  "description": "Même pour qui n’aime pas vraiment les navets, ça passe très bien avec le canard.",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 40,
+  "temps_cuisson": 55,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat",
+    "tarte"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Pâte feuilletée",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "rouleau",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Navets boules (ou boule d’or)",
+        "categorie": "Autre"
+      },
+      "valeur": 8,
+      "unite": "petits",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Cuisses de confit de canard (en boîte)",
+        "categorie": "Viande"
+      },
+      "valeur": 4,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Carotte",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Oignon",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Jaune d’œuf",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Beurre",
+        "categorie": "Laitier"
+      },
+      "valeur": 30,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Miel liquide",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "cuillerée à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Cerfeuil",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "bouquet",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel, poivre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Épluchez les navets, la carotte, l’oignon, coupez la carotte en petits dés et les navets en quatre.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 40,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Faites revenir doucement l’oignon avec le beurre dans une sauteuse 5 min, puis ajoutez la carotte et les navets. Salez, poivrez, ajoutez le miel et remuez. Couvrez, laissez mijoter 20 min, jusqu’à ce que les navets soient tendres.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Pendant ce temps, réchauffez le four à 180° (th 6). Rincez les cuisses de canard sous l’eau chaude pour dégraisser (réservez 1 cuillère à soupe de graisse), puis éliminez la peau. Avec les doigts, désossez-les puis émiettez la chair. Mélangez-la aux légumes dans la cocotte.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Graissez un plat à four avec la graisse de canard. Versez-y le contenu de la cocotte. Effeuillez et ciselez le cerfeuil, répartissez-le sur le mélange de canard et légumes. Déroulez la pâte par-dessus, rentrez les bords de pâte dans le moule. Faites un trou au centre du pie, maintenez-le ouvert avec une bande de papier aluminium (repliée plusieurs fois sur elle-même). Badigeonnez la pâte avec un pinceau trempé dans l’œuf battu.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Enfournez le pie pour 30 min, jusqu’à ce que la pâte soit bien dorée. Servez très chaud.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Notre bon accord : un cahors (rouge du Sud-Ouest).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Astuce pour promener le pie chez des ami(e)s : Vous pouvez préparer et cuire le pie à l’avance et le réchauffer 20 mn à four doux (150°, th 5).",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 55,
+        "repos_min": 0
+      }
+    }
+  ]
+}

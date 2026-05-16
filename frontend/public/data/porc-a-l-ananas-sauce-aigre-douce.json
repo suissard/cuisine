@@ -1,0 +1,238 @@
+{
+  "titre": "Porc à l’ananas à la sauce aigre douce",
+  "description": "2015, Recette de Manuel, le gourmand gourmet",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 45,
+  "temps_cuisson": 15,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Viande de porc",
+        "categorie": "Viande"
+      },
+      "valeur": 450,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Vinaigre blanc",
+        "categorie": "Autre"
+      },
+      "valeur": 6,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sauce tomates",
+        "categorie": "Légumes"
+      },
+      "valeur": 250,
+      "unite": "ml",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Poivron rouge",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Poivron vert",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Oignon jaune",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Carottes",
+        "categorie": "Légumes"
+      },
+      "valeur": 4,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Ananas en conserve (sans sucre ajouté)",
+        "categorie": "Épicerie"
+      },
+      "valeur": 350,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Farine",
+        "categorie": "Épicerie"
+      },
+      "valeur": 2,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sucre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 3,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sauce huître",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "cuillère à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sauce de soja",
+        "categorie": "Autre"
+      },
+      "valeur": 2,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Branches de céleri",
+        "categorie": "Autre"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Fécule de maïs",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "cuillère à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile d’arachide et d’olive",
+        "categorie": "Épicerie"
+      },
+      "valeur": 500,
+      "unite": "ml",
+      "sous_type": "+ 2 c. à soupe"
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Coupez la viande en carrés de 2 cm. Dans un bol faire mariner les morceaux avec ½ pincée de poivre, ½ pincée de sel et 2 cuillères à soupe de soja.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 45,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Versez 4 cuillères à soupe de farine dans un bol. Roulez chaque morceau mariné dedans.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Faire chauffer 500 ml d’huile d’arachide et faire frire la viande à feu modéré. Dorer, puis déposer sur du papier absorbant.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Coupez oignons, carottes, céleri et poivrons en lamelles. Réservez.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Égouttez l’ananas en conservant le jus. Coupez les tranches d’ananas en morceaux de 2 cm.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Sauce : mélangez 3 c. à soupe de sucre avec les 250 ml de tomates, le vinaigre, 1 c. à soupe de fécule, le jus d’ananas, 1 c. à soupe de sauce d'huître, une pincée de sel.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Faites chauffer 2 c. à soupe d’huile dans le wok. Ajoutez les lamelles d’oignons, revenir, puis ajoutez carottes, céleri, poivrons, faites sauter 3 min à feu vif.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 8,
+      "description": "Ajoutez la viande, l’ananas et la sauce. Mélangez 4 min. Ajustez le sel. Servir chaud avec du riz nature.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 15,
+        "repos_min": 0
+      }
+    }
+  ]
+}

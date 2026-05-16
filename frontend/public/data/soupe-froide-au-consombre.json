@@ -1,0 +1,148 @@
+{
+  "titre": "Soupe froide au concombre",
+  "description": "Faites maintes fois l’été, facile d’exécution, bonne à déguster, sympa à partager",
+  "origine": "Inconnue",
+  "portions": 11,
+  "temps_preparation": 10,
+  "temps_cuisson": 0,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "entrée",
+    "soupe"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Concombres",
+        "categorie": "Autre"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Tomates",
+        "categorie": "Légumes"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Yaourts grecs ou veloutés",
+        "categorie": "Laitier"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Estragon ou cerfeuil",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Tabasco",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel, poivre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Épluchez les concombres, les couper en deux dans le sens de la longueur et enlever les grains.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 10,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Détaillez les en lamelles de 2 mm environ.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Faites chauffer de l’eau et y mettre les tomates quand elle est bouillante. Sortez rapidement les tomates et épluchez les, puis épépinez les.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Mettez ces ingrédients, auxquels vous rajoutez le yaourt grec, dans un bol de mixeur avec le couteau.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Ajoutez le sel, le poivre, l’estragon et quelques gouttes de tabasco.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Mixez jusqu’à obtenir une texture presque liquide.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Gardez au réfrigérateur jusqu’au moment de servir.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    }
+  ]
+}

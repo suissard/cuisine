@@ -1,0 +1,247 @@
+{
+  "titre": "Bobun, recette vietnamienne",
+  "description": "Recette de Virginie Pindeler, agréable l’été, possible l’hiver, un plaisir à déguster",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 30,
+  "temps_cuisson": 5,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Viande à fondue (bœuf)",
+        "categorie": "Viande"
+      },
+      "valeur": 700,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sauce d’huître",
+        "categorie": "Autre"
+      },
+      "valeur": 3,
+      "unite": "c. à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Nuoc mam",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "petite bouteille",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Oignon",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Vermicelle de riz",
+        "categorie": "Épicerie"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Menthe fraîche",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "bouquet",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Coriandre fraîche",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "bouquet",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Bâtons de citronnelle",
+        "categorie": "Légumes"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Concombre",
+        "categorie": "Autre"
+      },
+      "valeur": 0,
+      "unite": "½",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Salade batavia",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Cacahuètes non salées",
+        "categorie": "Autre"
+      },
+      "valeur": 70,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Soja germé ou haricots mungo",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "barquette",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Arôme saveur Maggie",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "petit flacon",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Vinaigre blanc",
+        "categorie": "Autre"
+      },
+      "valeur": 3,
+      "unite": "c. à s.",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Curry doux et piment chili",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "c. à s. + 1 pincée",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Ail",
+        "categorie": "Légumes"
+      },
+      "valeur": 3,
+      "unite": "g",
+      "sous_type": "ousses"
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Marinade : Taillez la viande en fines tranches. Mettre un peu de sauce d’huître dessus, l'arôme saveur Maggie, le sel et le poivre. Faire mariner 1 heure.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 30,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Parallèlement faire cuire le vermicelle avec 1 cuillère à soupe de vinaigre de riz (blanc) pour qu’ils soient bien blancs. Bien rincer.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Dans la viande découpée, ajoutez l'oignon, la citronnelle taillée finement puis un peu d’huile d’olive.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Mélangez dans un grand récipient : feuilles de menthe, soja (½ barquette) la salade coupée, le ½ concombre en morceaux et la coriandre ciselée.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Mixez les cacahuètes ou écrasez-les dans un pilon.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Cuire : dans un faitout ou une sauteuse mettre l’huile d’olive, 3 gousses d’ail, versez la viande et cuire.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 7,
+      "description": "Sauce : 1 ½ bol d’eau, 1 ½ bol de sucre, 1 bol de vinaigre blanc, 1 bol de nuoc man, 1 c.à c. de sel, 1 pincée de piment chili.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 8,
+      "description": "Présentez : salade mélangée, puis le vermicelle coupé aux ciseaux, la viande et enfin la sauce. Parsemez de cacahuètes mixées.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 5,
+        "repos_min": 0
+      }
+    }
+  ]
+}

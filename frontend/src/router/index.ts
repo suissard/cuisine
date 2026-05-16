@@ -15,6 +15,26 @@ const router = createRouter({
       name: 'recipe',
       component: RecipeView,
     },
+    {
+      path: '/create',
+      name: 'create-recipe',
+      component: () => import('../views/RecipeCreateView.vue'),
+    },
+    {
+      path: '/import',
+      name: 'import-export',
+      component: () => import('../views/RecipeImportView.vue'),
+    },
+    {
+      path: '/live-editor',
+      name: 'live-editor',
+      component: () => import('../views/RecipeEditorView.vue'),
+    },
+    {
+      path: '/auth',
+      name: 'auth',
+      component: () => import('../views/AuthView.vue'),
+    },
   ],
 })
 

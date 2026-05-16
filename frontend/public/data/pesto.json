@@ -1,0 +1,146 @@
+{
+  "titre": "Pesto",
+  "description": "Par Bernard, l’été, quand le basilic nous titille les narines et étouffe le citronnier",
+  "origine": "Inconnue",
+  "portions": 3,
+  "temps_preparation": 15,
+  "temps_cuisson": 0,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "sauce"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Basilic",
+        "categorie": "Légumes"
+      },
+      "valeur": 60,
+      "unite": "g",
+      "sous_type": "(ou 40 g)"
+    },
+    {
+      "ingredient": {
+        "nom": "Pignons (ou noix)",
+        "categorie": "Épicerie"
+      },
+      "valeur": 30,
+      "unite": "g",
+      "sous_type": "(ou 20 g)"
+    },
+    {
+      "ingredient": {
+        "nom": "Parmesan râpé",
+        "categorie": "Laitier"
+      },
+      "valeur": 50,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile d’olive",
+        "categorie": "Épicerie"
+      },
+      "valeur": 12,
+      "unite": "cl",
+      "sous_type": "(ou 8 cl)"
+    },
+    {
+      "ingredient": {
+        "nom": "Ail",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "à 3 gousses",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel, poivre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Jus de citron",
+        "categorie": "Légumes"
+      },
+      "valeur": 0,
+      "unite": "Quelques gouttes",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Rassemblez tous les ingrédients ail, pignon, parmesan, la moitié de la quantité d’huile dans le bol d’un appareil électrique muni d’un couteau.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Faire une pâte.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Rajoutez après le basilic et le reste de l’huile. Broyer avec un mixeur.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Décollez la pâte obtenue avec une cuillère type “langue de chat”, celle qui racle bien sans abîmer.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Pour faciliter une utilisation ultérieure, dans un premier temps, mettre dans des petits moules proportionnables et placez au congélateur.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Quand les portions sont congelées, les mettre dans un sac en plastique et les prendre une par une selon le besoin.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    }
+  ]
+}

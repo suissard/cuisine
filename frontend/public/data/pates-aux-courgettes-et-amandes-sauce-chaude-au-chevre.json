@@ -1,0 +1,155 @@
+{
+  "titre": "Pâtes aux courgettes et aux amandes, sauce chaude au chèvre",
+  "description": "",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 15,
+  "temps_cuisson": 15,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "plat"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Tagliatelles (fraîches c’est mieux)",
+        "categorie": "Autre"
+      },
+      "valeur": 300,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Petites courgettes",
+        "categorie": "Légumes"
+      },
+      "valeur": 500,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Poudre d’amandes",
+        "categorie": "Épicerie"
+      },
+      "valeur": 50,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Chèvre frais",
+        "categorie": "Laitier"
+      },
+      "valeur": 150,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Crème liquide",
+        "categorie": "Laitier"
+      },
+      "valeur": 4,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile d’olive",
+        "categorie": "Épicerie"
+      },
+      "valeur": 4,
+      "unite": "cuillères à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Ail",
+        "categorie": "Légumes"
+      },
+      "valeur": 2,
+      "unite": "g",
+      "sous_type": "ousses"
+    },
+    {
+      "ingredient": {
+        "nom": "Piment d’Espelette, sel",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Lavez et essuyez les courgettes. Coupez-les en dés après avoir éliminé les extrémités. Pelez et émincez l’ail.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Faites chauffer la moitié de l’huile dans une sauteuse. Mettez l’ail à revenir sans colorer, puis ajoutez les courgettes et faites-les sauter à feu vif en remuant, pour qu’elles dorent, 10 min environ.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Dans le même temps, mettez de l’eau salée à bouillir dans un faitout pour faire cuire les tagliatelles.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Émiettez le chèvre dans une petite casserole. Ajoutez la crème, la poudre d’amandes et le reste d'huile, relevez d’une pincée de piment. Faites chauffer sur feu doux en remuant de temps en temps pour obtenir une sauce crémeuse.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Faites cuire les pâtes environ 6 min après reprise de l’ébullition (goûtez pour vérifier la cuisson), égouttez-les rapidement, versez-les dans un plat chaud, ajoutez les courgettes et la sauce au chèvre, mélangez et servez aussitôt.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 6,
+      "description": "Notre bon accord : Un anjou blanc (vallée de la Loire)",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 15,
+        "repos_min": 0
+      }
+    }
+  ]
+}

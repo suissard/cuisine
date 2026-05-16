@@ -1,0 +1,127 @@
+{
+  "titre": "Pommes dauphine",
+  "description": "Spécialité de Jeannette, rituel des Noël Clavier lors des grandes tablées",
+  "origine": "Inconnue",
+  "portions": 3,
+  "temps_preparation": 20,
+  "temps_cuisson": 35,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "accompagnement"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Pommes de terre à purée (Bintje)",
+        "categorie": "Autre"
+      },
+      "valeur": 400,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Beurre",
+        "categorie": "Laitier"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Farine",
+        "categorie": "Épicerie"
+      },
+      "valeur": 100,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Œufs",
+        "categorie": "Autre"
+      },
+      "valeur": 2,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile pour friture",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sel, poivre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 0,
+      "unite": "",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Épluchez les pommes de terre, lavez-les et faites-les cuire 25 mn dans une grande casserole d’eau salée.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 20,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Préparez une pâte à choux : mettez dans une casserole 20 cl d’eau, le beurre et une pincée de sel, faites bouillir, versez-y toute la farine d’un seul coup. Remuez au fouet. Retirez du feu et ajoutez les 2 œufs en fouettant.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Lorsque les pommes de terre sont cuites, égouttez-les et passez-les au moulin à légumes, grille fine. Ajoutez alors la pâte à choux en mélangeant intimement. Rectifiez l’assaisonnement.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Laissez refroidir et formez des boulettes de la grosseur d’une noix.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Faites chauffer l’huile, plongez les boulettes dans l’huile bien chaude. Lorsqu’elles sont dorées, égouttez-les sur du papier absorbant.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 35,
+        "repos_min": 0
+      }
+    }
+  ]
+}

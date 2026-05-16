@@ -1,0 +1,99 @@
+{
+  "titre": "Gratin de pommes",
+  "description": "Un dessert simple et réconfortant, parfait pour l'hiver.",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 15,
+  "temps_cuisson": 30,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "dessert"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Pommes",
+        "categorie": "Autre"
+      },
+      "valeur": 4,
+      "unite": "pièces",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sucre",
+        "categorie": "Épicerie"
+      },
+      "valeur": 50,
+      "unite": "g",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Cannelle",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "cuillère à café",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Beurre",
+        "categorie": "Laitier"
+      },
+      "valeur": 30,
+      "unite": "g",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Épluchez les pommes et coupez-les en dés.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 15,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Mélangez les pommes avec le sucre et la cannelle.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Disposez dans un plat à gratin, parsemez de beurre.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Enfournez 30 minutes à 180°C.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 30,
+        "repos_min": 0
+      }
+    }
+  ]
+}

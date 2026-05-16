@@ -1,0 +1,199 @@
+{
+  "titre": "Soupe thaïe à la truite",
+  "description": "Plusieurs fois testée, avec truite ou rougets, légère et savoureuse CVF n°202",
+  "origine": "Inconnue",
+  "portions": 4,
+  "temps_preparation": 20,
+  "temps_cuisson": 25,
+  "temps_repos": 0,
+  "degustation": "Ambiant",
+  "categories": [
+    "soupe"
+  ],
+  "materiel_global": [],
+  "difficulte": {
+    "preparation": 1,
+    "cuisson": 1,
+    "repos": 1
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "nom": "Filets de truite (ou rougets)",
+        "categorie": "Poisson"
+      },
+      "valeur": 3,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Lait de coco",
+        "categorie": "Laitier"
+      },
+      "valeur": 50,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Oignon rouge",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Échalote",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Piment vert",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Citron vert",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Bouillon de légumes",
+        "categorie": "Autre"
+      },
+      "valeur": 40,
+      "unite": "cl",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Tige de citronnelle",
+        "categorie": "Légumes"
+      },
+      "valeur": 1,
+      "unite": "",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Gingembre frais",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "noix",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Curcuma",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "c. à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Curry en poudre",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "c. à café",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Coriandre fraîche",
+        "categorie": "Autre"
+      },
+      "valeur": 10,
+      "unite": "feuilles",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Huile d’olive",
+        "categorie": "Épicerie"
+      },
+      "valeur": 2,
+      "unite": "c. à soupe",
+      "sous_type": ""
+    },
+    {
+      "ingredient": {
+        "nom": "Sauce nuoc-mâm",
+        "categorie": "Autre"
+      },
+      "valeur": 1,
+      "unite": "c. à soupe",
+      "sous_type": ""
+    }
+  ],
+  "etapes": [
+    {
+      "ordre": 1,
+      "description": "Pelez l’oignon et l’échalote. Hachez-les. Versez l’huile dans une casserole et faites-les blondir pendant 5 min. Pelez le gingembre et hachez-le. Ôtez la première écorce de la citronnelle et ciselez-la finement. Ajoutez-les dans la casserole avec les tiges de la coriandre. Continuez la cuisson 5 min, saupoudrez avec le curcuma, le curry et versez le lait de coco et le bouillon de légumes.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 20,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 2,
+      "description": "Laissez cuire 10 mn. Prélevez les zestes et le jus du citron. Coupez le piment en très fines lamelles. Rincez les filets de truite et coupez-les en tronçons de 3 cm.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 3,
+      "description": "Filtrez la soupe à travers une passoire et remettez-la sur le feu. Ajoutez le jus de citron, le nuoc-mâm, le piment. Lorsque la soupe est bien chaude, ajoutez les lamelles de poisson et faites-les pocher 3 min.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 4,
+      "description": "Servez la soupe dans des bols ou assiettes creuses et parsemez-la avec les zestes de citron et la coriandre ciselée.",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 0,
+        "repos_min": 0
+      }
+    },
+    {
+      "ordre": 5,
+      "description": "Notre bon accord : un gewurztraminer (Alsace)",
+      "materiel_utilise": [],
+      "temps": {
+        "preparation_min": 0,
+        "cuisson_min": 25,
+        "repos_min": 0
+      }
+    }
+  ]
+}
