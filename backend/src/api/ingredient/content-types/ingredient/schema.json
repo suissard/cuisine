@@ -16,17 +16,7 @@
       "required": true
     },
     "categorie": {
-      "type": "enumeration",
-      "enum": [
-        "Légumes",
-        "Fruits",
-        "Viande",
-        "Poisson",
-        "Féculent",
-        "Laitier",
-        "Assaisonnement",
-        "Autre"
-      ]
+      "type": "string"
     },
     "intolerances": {
       "type": "relation",

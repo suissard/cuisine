@@ -23,14 +23,15 @@
       "type": "string"
     },
     "portions": {
-      "type": "integer"
+      "type": "string"
     },
     "degustation": {
       "type": "enumeration",
       "enum": [
         "Froid",
         "Chaud",
-        "Tiède"
+        "Tiède",
+        "Ambiant"
       ]
     },
     "image": {

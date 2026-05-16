@@ -42,132 +42,167 @@ export default {
       });
     }
 
-    const recipesData = JSON.parse(
-      fs.readFileSync(path.join(process.cwd(), 'data/recipes.json'), 'utf-8')
-    );
+    const recipesDir = path.join(process.cwd(), 'data/recipes');
+    if (fs.existsSync(recipesDir)) {
+      const files = fs.readdirSync(recipesDir).filter(f => f.endsWith('.json'));
+      console.log(`Found ${files.length} recipe files to process.`);
 
-    for (const recipe of recipesData) {
-      const existing = await strapi.documents('api::recette.recette').findFirst({
-        filters: { titre: recipe.titre },
-        populate: { author: true }
-      });
-
-      if (existing) {
-        // If the recipe exists but has no author, update it
-        if (!existing.author) {
-          console.log(`Updating recipe with author: ${recipe.titre}`);
-          await strapi.documents('api::recette.recette').update({
-            documentId: existing.documentId,
-            data: { author: { connect: [defaultUser.id] } },
-            status: 'published'
-          });
-        }
-        continue;
-      }
-      
-      console.log(`Seeding recipe: ${recipe.titre}`);
-        // Create Categories
-        const categoryDocIds = [];
-        for (const catName of recipe.categories) {
-          let cat = await strapi.documents('api::categorie-plat.categorie-plat').findFirst({
-            filters: { nom: catName }
-          });
-          if (!cat) {
-            cat = await strapi.documents('api::categorie-plat.categorie-plat').create({
-              data: { nom: catName },
-              status: 'published'
-            });
-          }
-          categoryDocIds.push(cat.documentId);
+      for (const file of files) {
+        const filePath = path.join(recipesDir, file);
+        let recipesData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        
+        // Handle both single objects and arrays
+        if (!Array.isArray(recipesData)) {
+          recipesData = [recipesData];
         }
 
-        // Create Global Materiels
-        const materielGlobalDocIds = [];
-        for (const matName of recipe.materiel_global) {
-          let mat = await strapi.documents('api::materiel.materiel').findFirst({
-            filters: { nom: matName }
+        for (const recipe of recipesData) {
+          const existing = await strapi.documents('api::recette.recette').findFirst({
+            filters: { titre: recipe.titre },
+            populate: { author: true }
           });
-          if (!mat) {
-            mat = await strapi.documents('api::materiel.materiel').create({
-              data: { nom: matName },
-              status: 'published'
-            });
-          }
-          materielGlobalDocIds.push(mat.documentId);
-        }
 
-        // Create Ingredients
-        const formattedIngredients = [];
-        for (const ing of recipe.ingredients) {
-          let ingredientObj = await strapi.documents('api::ingredient.ingredient').findFirst({
-            filters: { nom: ing.ingredient.nom }
-          });
-          if (!ingredientObj) {
-            ingredientObj = await strapi.documents('api::ingredient.ingredient').create({
-              data: {
-                nom: ing.ingredient.nom,
-                categorie: ing.ingredient.categorie
-              },
-              status: 'published'
-            });
-          }
-          formattedIngredients.push({
-            ingredient: ingredientObj.documentId,
-            valeur: ing.valeur,
-            unite: ing.unite,
-            sous_type: ing.sous_type
-          });
-        }
-
-        // Create Etapes
-        const formattedEtapes = [];
-        for (const etape of recipe.etapes) {
-          const materielUtilise = [];
-          if (etape.materiel_utilise) {
-            for (const mat of etape.materiel_utilise) {
-              let matObj = await strapi.documents('api::materiel.materiel').findFirst({
-                filters: { nom: mat.materiel.nom }
-              });
-              if (!matObj) {
-                matObj = await strapi.documents('api::materiel.materiel').create({
-                  data: { nom: mat.materiel.nom },
-                  status: 'published'
-                });
-              }
-              materielUtilise.push({
-                materiel: matObj.documentId,
-                texte_associe: mat.texte_associe
+          if (existing) {
+            // If the recipe exists but has no author, update it
+            if (!existing.author) {
+              console.log(`Updating recipe with author: ${recipe.titre}`);
+              await strapi.documents('api::recette.recette').update({
+                documentId: existing.documentId,
+                data: { author: { connect: [defaultUser.id] } } as any,
+                status: 'published'
               });
             }
+            continue;
           }
+          
+          console.log(`Seeding recipe from ${file}: ${recipe.titre}`);
+          try {
+            // Create Categories
+            const categoryDocIds = [];
+            if (recipe.categories) {
+              for (const catName of recipe.categories) {
+                let cat = await strapi.documents('api::categorie-plat.categorie-plat').findFirst({
+                  filters: { nom: catName }
+                });
+                if (!cat) {
+                  cat = await strapi.documents('api::categorie-plat.categorie-plat').create({
+                    data: { nom: catName },
+                    status: 'published'
+                  });
+                }
+                categoryDocIds.push(cat.documentId);
+              }
+            }
 
-          formattedEtapes.push({
-            ordre: etape.ordre,
-            description: etape.description,
-            temps: etape.temps,
-            materiel_utilise: materielUtilise
-          });
+            // Create Global Materiels
+            const materielGlobalDocIds = [];
+            if (recipe.materiel_global) {
+              for (const matName of recipe.materiel_global) {
+                let mat = await strapi.documents('api::materiel.materiel').findFirst({
+                  filters: { nom: matName }
+                });
+                if (!mat) {
+                  mat = await strapi.documents('api::materiel.materiel').create({
+                    data: { nom: matName },
+                    status: 'published'
+                  });
+                }
+                materielGlobalDocIds.push(mat.documentId);
+              }
+            }
+
+            // Create Ingredients
+            const formattedIngredients = [];
+            if (recipe.ingredients) {
+              for (const ing of recipe.ingredients) {
+                let ingredientObj = await strapi.documents('api::ingredient.ingredient').findFirst({
+                  filters: { nom: ing.ingredient.nom }
+                });
+                if (!ingredientObj) {
+                  ingredientObj = await strapi.documents('api::ingredient.ingredient').create({
+                    data: {
+                      nom: ing.ingredient.nom,
+                      categorie: ing.ingredient.categorie
+                    },
+                    status: 'published'
+                  });
+                }
+                const parseValeur = (val: any) => {
+                  if (val === null || val === "null" || val === undefined) return null;
+                  const parsed = parseFloat(val);
+                  return isNaN(parsed) ? null : parsed;
+                };
+
+                formattedIngredients.push({
+                  ingredient: ingredientObj.documentId,
+                  valeur: parseValeur(ing.valeur),
+                  unite: ing.unite === "null" ? null : ing.unite,
+                  sous_type: ing.sous_type === "null" ? null : ing.sous_type
+                });
+              }
+            }
+
+            // Create Etapes
+            const formattedEtapes = [];
+            if (recipe.etapes) {
+              for (const etape of recipe.etapes) {
+                const materielUtilise = [];
+                if (etape.materiel_utilise) {
+                  for (const mat of etape.materiel_utilise) {
+                    const materialName = typeof mat.materiel === 'string' ? mat.materiel : mat.materiel?.nom;
+                    if (!materialName) continue;
+
+                    let matObj = await strapi.documents('api::materiel.materiel').findFirst({
+                      filters: { nom: materialName }
+                    });
+                    if (!matObj) {
+                      matObj = await strapi.documents('api::materiel.materiel').create({
+                        data: { nom: materialName },
+                        status: 'published'
+                      });
+                    }
+                    materielUtilise.push({
+                      materiel: matObj.documentId,
+                      texte_associe: mat.texte_associe
+                    });
+                  }
+                }
+
+                formattedEtapes.push({
+                  ordre: etape.ordre,
+                  description: etape.description,
+                  temps: etape.temps,
+                  materiel_utilise: materielUtilise
+                });
+              }
+            }
+
+            // Create Recipe with author
+            await strapi.documents('api::recette.recette').create({
+              data: {
+                titre: recipe.titre,
+                description: recipe.description,
+                origine: recipe.origine,
+                portions: recipe.portions?.toString(),
+                degustation: recipe.degustation,
+                categories: categoryDocIds,
+                materiel_global: materielGlobalDocIds,
+                difficulte: recipe.difficulte,
+                ingredients: formattedIngredients,
+                etapes: formattedEtapes,
+                author: { connect: [defaultUser.id] },
+              } as any,
+              status: 'published'
+            });
+          } catch (err) {
+            console.error(`Failed to seed recipe ${recipe.titre}:`, err);
+          }
         }
-
-        // Create Recipe with author
-        await strapi.documents('api::recette.recette').create({
-          data: {
-            titre: recipe.titre,
-            description: recipe.description,
-            origine: recipe.origine,
-            portions: recipe.portions,
-            degustation: recipe.degustation,
-            categories: categoryDocIds,
-            materiel_global: materielGlobalDocIds,
-            difficulte: recipe.difficulte,
-            ingredients: formattedIngredients,
-            etapes: formattedEtapes,
-            author: { connect: [defaultUser.id] },
-          },
-          status: 'published'
-        });
       }
       console.log('Seeding complete!');
+    } else {
+      console.log('No recipes directory found to seed.');
+    }
 
     // Make public API readable
     const publicRole = await strapi.db.query('plugin::users-permissions.role').findOne({
