@@ -213,11 +213,31 @@ export default {
       const publicPermissions = [
         'api::recette.recette.find',
         'api::recette.recette.findOne',
-        'api::recette.recette.import',
         'api::recette.search.search',
         'plugin::users-permissions.user.find',
-        'plugin::users-permissions.user.findOne'
+        'plugin::users-permissions.user.findOne',
+        'api::ingredient.ingredient.find',
+        'api::ingredient.ingredient.findOne',
+        'api::materiel.materiel.find',
+        'api::materiel.materiel.findOne',
+        'api::categorie-plat.categorie-plat.find',
+        'api::categorie-plat.categorie-plat.findOne'
       ];
+      
+      // Clean up previous create/import permissions if they were given to public
+      const revokedPermissions = [
+        'api::recette.recette.create',
+        'api::recette.recette.import',
+        'api::ingredient.ingredient.create',
+        'api::materiel.materiel.create',
+        'api::categorie-plat.categorie-plat.create'
+      ];
+      for (const action of revokedPermissions) {
+        await strapi.db.query('plugin::users-permissions.permission').delete({
+          where: { role: publicRole.id, action }
+        });
+      }
+
       for (const action of publicPermissions) {
         const p = await strapi.db.query('plugin::users-permissions.permission').findOne({
           where: { role: publicRole.id, action }
@@ -241,7 +261,16 @@ export default {
         'api::recette.recette.findOne',
         'api::recette.recette.create',
         'api::recette.recette.import',
-        'api::recette.search.search'
+        'api::recette.search.search',
+        'api::ingredient.ingredient.find',
+        'api::ingredient.ingredient.findOne',
+        'api::ingredient.ingredient.create',
+        'api::materiel.materiel.find',
+        'api::materiel.materiel.findOne',
+        'api::materiel.materiel.create',
+        'api::categorie-plat.categorie-plat.find',
+        'api::categorie-plat.categorie-plat.findOne',
+        'api::categorie-plat.categorie-plat.create'
       ];
       for (const action of authPermissions) {
         const p = await strapi.db.query('plugin::users-permissions.permission').findOne({

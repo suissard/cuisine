@@ -5,7 +5,7 @@ export default {
       path: '/recettes/import',
       handler: 'api::recette.recette.import',
       config: {
-        auth: false, // On pourra affiner plus tard si besoin, mais pour l'instant on veut que ça marche
+        // Enforces standard users-permissions auth check to populate ctx.state.user
       },
     },
   ],

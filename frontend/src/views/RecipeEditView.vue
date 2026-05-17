@@ -2,8 +2,8 @@
   <div class="create-recipe-container">
     <div class="form-card">
       <header class="form-header">
-        <h1>Nouvelle Recette</h1>
-        <p class="form-subtitle">Partagez votre chef-d'œuvre culinaire avec la communauté</p>
+        <h1>Modifier la Recette</h1>
+        <p class="form-subtitle">Mettez à jour les informations de votre recette</p>
         <div class="steps-nav">
           <div v-for="s in 3" :key="s" :class="['step-dot', { active: step === s, completed: step > s }]">
             <span class="step-num">{{ s }}</span>
@@ -178,7 +178,7 @@
           <button v-if="step < 3" type="button" @click="step++" class="btn-next">Suivant</button>
           <button v-else type="submit" class="btn-submit" :disabled="submitting">
             <span v-if="submitting">Enregistrement... ⏳</span>
-            <span v-else>Créer la recette 🍳</span>
+            <span v-else>Enregistrer les modifications 💾</span>
           </button>
         </div>
       </form>
@@ -188,11 +188,12 @@
 
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import { useUserStore } from '@/stores/user';
 import AutocompleteInput from '@/components/AutocompleteInput.vue';
 
 const router = useRouter();
+const route = useRoute();
 const userStore = useUserStore();
 const step = ref(1);
 const submitting = ref(false);
@@ -253,8 +254,69 @@ onMounted(async () => {
       const data = await catRes.json();
       availableCategories.value = data.data.map((item: any) => item.nom);
     }
+
+    // 4. Load existing recipe data
+    const id = route.params.id;
+    if (id) {
+      const resRecipe = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/recettes/search`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          filters: { documentId: id },
+          populate: {
+            etapes: { populate: { temps: true, materiel_utilise: { populate: { materiel: true } } } },
+            ingredients: { populate: { ingredient: true } },
+            categories: true,
+            materiel_global: true,
+            difficulte: true,
+            author: true
+          }
+        })
+      });
+      const dataRecipe = await resRecipe.json();
+      if (dataRecipe && dataRecipe.data && dataRecipe.data.length > 0) {
+        const rec = dataRecipe.data[0];
+        
+        // Check author
+        if (!rec.author || (rec.author.username !== userStore.currentUser?.username && rec.author.id !== userStore.currentUser?.id)) {
+           alert("Vous n'êtes pas l'auteur de cette recette.");
+           router.push('/');
+           return;
+        }
+
+        form.titre = rec.titre || '';
+        form.description = rec.description || '';
+        form.portions = parseInt(rec.portions) || 4;
+        form.degustation = rec.degustation || 'Chaud';
+        form.categories = rec.categories?.map((c: any) => c.nom) || [];
+        
+        if (rec.ingredients?.length > 0) {
+          form.ingredients = rec.ingredients.map((ing: any) => ({
+            nom: ing.ingredient?.nom || '',
+            valeur: ing.valeur || 0,
+            unite: ing.unite || ''
+          }));
+        }
+
+        if (rec.etapes?.length > 0) {
+          form.etapes = rec.etapes.map((etape: any) => ({
+            description: etape.description || '',
+            prep: etape.temps?.preparation_min || 0,
+            cuisson: etape.temps?.cuisson_min || 0,
+            repos: etape.temps?.repos_min || 0,
+            materiel_utilise: (etape.materiel_utilise || []).map((mu: any) => ({
+               materiel: mu.materiel?.nom || '',
+               texte_associe: mu.texte_associe || ''
+            }))
+          }));
+        }
+      } else {
+         alert("Recette introuvable.");
+         router.push('/');
+      }
+    }
   } catch (err) {
-    console.error("Error fetching dynamic suggestions from Strapi:", err);
+    console.error("Error fetching data:", err);
   }
 });
 
@@ -420,22 +482,22 @@ const handleSubmit = async () => {
       headers['Authorization'] = `Bearer ${userStore.token}`;
     }
 
-    const res = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/recettes/import`, {
-      method: 'POST',
+    const res = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/recettes/me/${route.params.id}`, {
+      method: 'PUT',
       headers,
       body: JSON.stringify({ data: formattedRecipe })
     });
 
     if (res.ok) {
-      alert(`Félicitations ! La recette "${form.titre}" a été enregistrée avec succès dans la base de données.`);
-      router.push('/');
+      alert(`La recette "${form.titre}" a été mise à jour avec succès.`);
+      router.push(`/recipe/${route.params.id}`);
     } else {
       const err = await res.json();
       alert("Erreur lors de l'enregistrement de la recette : " + (err.error?.message || res.statusText));
     }
   } catch (err) {
-    console.error('Error submitting recipe:', err);
-    alert("Erreur de connexion au serveur lors de la création de la recette.");
+    console.error('Error updating recipe:', err);
+    alert("Erreur de connexion au serveur lors de la mise à jour de la recette.");
   } finally {
     submitting.value = false;
   }

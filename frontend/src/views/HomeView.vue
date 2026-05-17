@@ -9,36 +9,74 @@
       
       <!-- Search and Filter Bar -->
       <div class="search-glass-panel">
-        <div class="search-input-wrapper">
-          <span class="search-icon">🔍</span>
-          <input 
-            type="text" 
-            v-model="recipeStore.searchQuery" 
-            placeholder="Que voulez-vous cuisiner aujourd'hui ?"
-            class="search-input"
-          />
-        </div>
-        
-        <div class="filters-row">
-          <div class="tags-filter">
-            <span 
-              v-for="tag in recipeStore.allAvailableTags" 
-              :key="tag"
-              @click="recipeStore.toggleTagFilter(tag)"
-              class="filter-tag"
-              :class="{ 'active': recipeStore.selectedTags.includes(tag) }"
-            >
-              {{ tag }}
-            </span>
+        <div class="search-main-row">
+          <div class="search-input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input 
+              type="text" 
+              v-model="recipeStore.searchQuery" 
+              placeholder="Que voulez-vous cuisiner aujourd'hui ?"
+              class="search-input"
+            />
           </div>
           
-          <div class="sort-controls">
+          <div class="search-actions">
             <select v-model="sortOption" @change="applySort" class="sort-select">
               <option value="title-asc">Titre (A-Z)</option>
               <option value="title-desc">Titre (Z-A)</option>
               <option value="prepTime-asc">Temps (Croissant)</option>
               <option value="prepTime-desc">Temps (Décroissant)</option>
             </select>
+            
+            <button 
+              @click="toggleAdvanced" 
+              class="advanced-toggle-btn"
+              :class="{ 'active': isAdvancedOpen || recipeStore.selectedTags.length > 0 }"
+            >
+              <span class="btn-icon">🎛️</span>
+              <span class="btn-text">Filtres</span>
+              <span v-if="recipeStore.selectedTags.length > 0" class="filter-count">
+                {{ recipeStore.selectedTags.length }}
+              </span>
+              <span class="arrow-icon">{{ isAdvancedOpen ? '▲' : '▼' }}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Active Tags (Always visible if any, so user has instant feedback) -->
+        <div v-if="recipeStore.selectedTags.length > 0" class="active-filters-row">
+          <span class="active-filters-label">Filtres actifs :</span>
+          <div class="active-tags-list">
+            <span 
+              v-for="tag in recipeStore.selectedTags" 
+              :key="tag"
+              @click="recipeStore.toggleTagFilter(tag)"
+              class="active-filter-pill"
+            >
+              {{ tag }} <span class="remove-tag">×</span>
+            </span>
+            <button @click="recipeStore.clearFilters" class="clear-all-link">Effacer tout</button>
+          </div>
+        </div>
+        
+        <!-- Advanced Expandable Tags Panel -->
+        <div 
+          class="advanced-panel" 
+          :class="{ 'open': isAdvancedOpen }"
+        >
+          <div class="advanced-panel-inner">
+            <h4 class="tags-title">Filtrer par catégorie :</h4>
+            <div class="tags-filter">
+              <span 
+                v-for="tag in recipeStore.allAvailableTags" 
+                :key="tag"
+                @click="recipeStore.toggleTagFilter(tag)"
+                class="filter-tag"
+                :class="{ 'active': recipeStore.selectedTags.includes(tag) }"
+              >
+                {{ tag }}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -122,6 +160,11 @@ const router = useRouter()
 const recipeStore = useRecipeStore()
 
 const sortOption = ref('title-asc')
+const isAdvancedOpen = ref(false)
+
+const toggleAdvanced = () => {
+  isAdvancedOpen.value = !isAdvancedOpen.value
+}
 
 const applySort = () => {
   const [key, order] = sortOption.value.split('-')
@@ -200,18 +243,18 @@ onMounted(async () => {
 /* Hero Section */
 .hero {
   position: relative;
-  padding: 80px 20px;
+  padding: 60px 20px 50px;
   background: radial-gradient(circle at top right, #3b82f6 0%, #1e3a8a 100%);
   color: white;
   text-align: center;
   border-radius: 0 0 40px 40px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .hero-content {
   max-width: 800px;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
   animation: fadeInDown 0.8s ease-out;
 }
 
@@ -233,31 +276,35 @@ onMounted(async () => {
   font-weight: 300;
 }
 
-/* Search Glass Panel */
+/* Search Glass Panel Layout */
 .search-glass-panel {
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 24px;
   padding: 25px;
-  transform: translateY(50%);
-  position: absolute;
-  bottom: 0;
-  left: 20px;
-  right: 20px;
+  position: relative;
+  z-index: 10;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
+.search-main-row {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  width: 100%;
+}
+
 .search-input-wrapper {
+  flex: 1;
   display: flex;
   align-items: center;
   background: white;
   border-radius: 16px;
   padding: 5px 20px;
-  margin-bottom: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -277,19 +324,176 @@ onMounted(async () => {
   background: transparent;
 }
 
-.filters-row {
+.search-actions {
   display: flex;
-  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.sort-select {
+  padding: 14px 20px;
+  border-radius: 16px;
+  border: none;
+  background: white;
+  color: #1e293b;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+}
+
+/* Advanced Toggle Button */
+.advanced-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.advanced-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.advanced-toggle-btn.active {
+  background: #fbbf24;
+  color: #78350f;
+  border-color: #fbbf24;
+}
+
+.filter-count {
+  background: #78350f;
+  color: #fbbf24;
+  font-size: 0.8rem;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advanced-toggle-btn.active .filter-count {
+  background: white;
+  color: #78350f;
+}
+
+.arrow-icon {
+  font-size: 0.8rem;
+  margin-left: 2px;
+  transition: transform 0.3s;
+}
+
+/* Active Filters Row */
+.active-filters-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.active-filters-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  white-space: nowrap;
+}
+
+.active-tags-list {
+  display: flex;
   align-items: center;
   flex-wrap: wrap;
+  gap: 8px;
+}
+
+.active-filter-pill {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.active-filter-pill:hover {
+  background: rgba(251, 191, 36, 0.3);
+  transform: translateY(-1px);
+}
+
+.remove-tag {
+  font-size: 1.1rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.clear-all-link {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.clear-all-link:hover {
+  color: white;
+}
+
+/* Expandable Advanced Panel */
+.advanced-panel {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.advanced-panel.open {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.advanced-panel-inner {
+  display: flex;
+  flex-direction: column;
   gap: 15px;
+}
+
+.tags-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  margin: 0;
 }
 
 .tags-filter {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  flex: 1;
 }
 
 .filter-tag {
@@ -314,23 +518,11 @@ onMounted(async () => {
   border-color: #fbbf24;
 }
 
-.sort-select {
-  padding: 10px 15px;
-  border-radius: 12px;
-  border: none;
-  background: white;
-  color: #1e293b;
-  font-weight: 500;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
 /* Main Content */
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 20px 20px; /* Offset for the overlapping search panel */
+  padding: 20px;
 }
 
 /* Grid */
@@ -499,11 +691,14 @@ onMounted(async () => {
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 60px 20px 80px; }
+  .hero { padding: 40px 15px 30px; }
   .hero-title { font-size: 2.5rem; }
-  .search-glass-panel { position: relative; transform: none; bottom: auto; left: auto; right: auto; margin-top: -40px; border-radius: 20px; }
-  .main-content { padding-top: 40px; }
-  .filters-row { flex-direction: column; align-items: stretch; }
+  .search-glass-panel { padding: 15px; border-radius: 20px; }
+  .search-main-row { flex-direction: column; align-items: stretch; gap: 10px; }
+  .search-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .sort-select { width: 100%; }
+  .advanced-toggle-btn { width: 100%; justify-content: center; }
+  .active-filters-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .main-content { padding-top: 10px; }
 }
 </style>

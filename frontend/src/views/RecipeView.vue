@@ -4,6 +4,11 @@
       <router-link to="/" class="back-btn">
         <span class="back-icon">←</span> Retour aux recettes
       </router-link>
+      
+      <div v-if="isAuthor" class="author-actions">
+        <button @click="editRecipe" class="btn-edit">✏️ Modifier</button>
+        <button @click="showDeleteModal = true" class="btn-delete">🗑️ Supprimer</button>
+      </div>
     </div>
 
     <!-- Loading Skeleton -->
@@ -113,17 +118,37 @@
         </div>
       </div>
     </div>
+    
+    <!-- Modal de suppression -->
+    <div v-if="showDeleteModal" class="modal-overlay" @click="showDeleteModal = false">
+      <div class="modal-content" @click.stop>
+        <h3>Supprimer la recette ?</h3>
+        <p>Êtes-vous sûr de vouloir supprimer la recette <strong>{{ recette.titre }}</strong> ? Cette action est irréversible.</p>
+        <div class="modal-actions">
+          <button @click="showDeleteModal = false" class="btn-cancel">Annuler</button>
+          <button @click="deleteRecipe" class="btn-confirm-delete" :disabled="isDeleting">
+            {{ isDeleting ? 'Suppression...' : 'Oui, supprimer' }}
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, computed } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
+import { useUserStore } from '../stores/user';
 
 const route = useRoute();
+const router = useRouter();
+const userStore = useUserStore();
+
 const loading = ref(true);
 const error = ref(null);
 const recette = ref(null);
+const showDeleteModal = ref(false);
+const isDeleting = ref(false);
 const globalMaterielColors = ref({});
 const colorIdx = ref(0);
 const pastelColors = [
@@ -145,6 +170,39 @@ const totalRepos = computed(() => {
   return recette.value.etapes.reduce((acc, e) => acc + (e.temps?.repos_min || 0), 0);
 });
 
+const isAuthor = computed(() => {
+  if (!recette.value || !recette.value.author || !userStore.currentUser) return false;
+  return recette.value.author.username === userStore.currentUser.username || 
+         recette.value.author.id === userStore.currentUser.id;
+});
+
+const editRecipe = () => {
+  router.push(`/recipe/edit/${recette.value.documentId}`);
+};
+
+const deleteRecipe = async () => {
+  if (!recette.value?.documentId) return;
+  
+  isDeleting.value = true;
+  try {
+    const res = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/recettes/me/${recette.value.documentId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${userStore.token}`
+      }
+    });
+    
+    if (!res.ok) throw new Error('Failed to delete');
+    
+    router.push('/');
+  } catch (err) {
+    console.error('Erreur lors de la suppression:', err);
+    alert('Erreur lors de la suppression de la recette.');
+    isDeleting.value = false;
+    showDeleteModal.value = false;
+  }
+};
+
 onMounted(async () => {
   const id = route.params.id;
   try {
@@ -155,10 +213,19 @@ onMounted(async () => {
         filters: { documentId: id },
         populate: {
           etapes: {
-            populate: '*'
+            populate: {
+              temps: true,
+              materiel_utilise: {
+                populate: {
+                  materiel: true
+                }
+              }
+            }
           },
           ingredients: {
-            populate: '*'
+            populate: {
+              ingredient: true
+            }
           },
           categories: true,
           materiel_global: true,
@@ -179,8 +246,21 @@ onMounted(async () => {
         body: JSON.stringify({
           filters: { id: id },
           populate: {
-            etapes: { populate: '*' },
-            ingredients: { populate: '*' },
+            etapes: {
+              populate: {
+                temps: true,
+                materiel_utilise: {
+                  populate: {
+                    materiel: true
+                  }
+                }
+              }
+            },
+            ingredients: {
+              populate: {
+                ingredient: true
+              }
+            },
             categories: true,
             materiel_global: true,
             difficulte: true,
@@ -242,10 +322,12 @@ const formatEtapeDescription = (etape) => {
       const nom = mat.materiel?.nom;
       if (!nom) return;
       const color = getColorFor(nom);
-      if (mat.texte_associe && desc.includes(mat.texte_associe)) {
+      if (mat.texte_associe && desc.toLowerCase().includes(mat.texte_associe.toLowerCase())) {
+        const escapedText = mat.texte_associe.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const regex = new RegExp(escapedText, 'gi');
         desc = desc.replace(
-          mat.texte_associe,
-          `<span class="highlight-text" style="--hl-color: ${color};">${mat.texte_associe}</span>`
+          regex,
+          (match) => `<span class="highlight-text" style="--hl-color: ${color};">${match}</span>`
         );
       }
     });
@@ -281,6 +363,45 @@ const hasStepMeta = (etape) => {
 
 .back-nav {
   margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.author-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+  padding: 8px 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.btn-edit {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.btn-edit:hover {
+  background: #fde68a;
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+.btn-delete:hover {
+  background: #fca5a5;
+  color: white;
+  transform: translateY(-2px);
 }
 
 .back-btn {
@@ -447,7 +568,7 @@ h2 {
   gap: 10px;
 }
 
-.highlight-text {
+.highlight-text, :deep(.highlight-text) {
   background-color: var(--hl-color, #e2e8f0);
   padding: 2px 8px;
   border-radius: 6px;
@@ -637,6 +758,90 @@ h2 {
 
 .btn-primary:hover {
   background: #2563eb;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: #1e293b;
+  font-size: 1.5rem;
+}
+
+.modal-content p {
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn-cancel {
+  padding: 10px 16px;
+  background: #f1f5f9;
+  color: #475569;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-cancel:hover {
+  background: #e2e8f0;
+}
+
+.btn-confirm-delete {
+  padding: 10px 16px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-confirm-delete:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.btn-confirm-delete:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 @media (max-width: 900px) {
