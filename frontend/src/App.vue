@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterView, RouterLink } from 'vue-router'
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
 import { useUserStore } from '@/stores/user'
 
 const userStore = useUserStore()
@@ -9,10 +9,25 @@ const handleLogout = () => {
   userStore.clearUser()
 }
 
+const isSuperAdmin = computed(() => {
+  const user = userStore.currentUser
+  if (!user) return false
+
+  // Check role name
+  if (user.role === 'Super Admin' || user.role === 'strapi-super-admin') return true
+
+  // Check roles array
+  if (user.roles && Array.isArray(user.roles)) {
+    return user.roles.some((r: any) => r.name === 'Super Admin' || r.code === 'strapi-super-admin')
+  }
+
+  return false
+})
+
 onMounted(async () => {
   if (userStore.token) {
     try {
-      const res = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/users/me?populate=role`, {
+      const res = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/users/me`, {
         headers: {
           'Authorization': `Bearer ${userStore.token}`
         }
@@ -49,6 +64,7 @@ onMounted(async () => {
           <router-link to="/create" class="nav-link">Créer</router-link>
           <router-link to="/import" class="nav-link">Import/Export</router-link>
           <router-link to="/live-editor" class="nav-link special">Live Editor</router-link>
+          <router-link v-if="isSuperAdmin" to="/admin" class="nav-link admin-link">🛡️ Administration</router-link>
           
           <!-- Auth Section -->
           <div class="auth-section">
@@ -161,6 +177,19 @@ body {
   transform: translateY(-1px);
   box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
   color: white;
+}
+
+.nav-link.admin-link {
+  background: #fffbeb;
+  color: #855300;
+  border: 1px solid #fbd38d;
+  font-weight: 700;
+}
+
+.nav-link.admin-link:hover, .nav-link.admin-link.router-link-active {
+  background: #fef3c7;
+  color: #613b00;
+  border-color: #f59e0b;
 }
 
 /* Auth Styles */

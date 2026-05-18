@@ -68,7 +68,7 @@
                         <span class="ingredient-name">{{ ing.ingredient?.nom }}</span>
                         <span v-if="ing.sous_type" class="ingredient-sub">{{ ing.sous_type }}</span>
                       </div>
-                      <span class="ingredient-qty">{{ ing.valeur }} {{ ing.unite }}</span>
+                      <span class="ingredient-qty">{{ formatQty(ing) }}</span>
                     </div>
                   </div>
                 </div>
@@ -282,6 +282,12 @@ const formatTime = (mins) => {
   if (!mins) return '0 min';
   if (mins >= 60) return `${Math.floor(mins / 60)}h${mins % 60 > 0 ? mins % 60 : ''}`;
   return `${mins} min`;
+};
+
+const formatQty = (ing) => {
+  const hasUnit = ing.unite && ing.unite !== 'null' && ing.unite.trim() !== '';
+  const value = (ing.valeur !== null && ing.valeur !== undefined && ing.valeur !== 0 && ing.valeur !== '') ? ing.valeur : 1;
+  return hasUnit ? `${value} ${ing.unite}` : `${value}`;
 };
 
 const formatEtapeTemps = (etape) => {

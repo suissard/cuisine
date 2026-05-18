@@ -14,12 +14,24 @@ export interface User {
   email: string
   avatar?: string
   role?: string
+  roles?: Array<{ id: number; name: string; description: string; code: string }>
   preferences: UserPreferences
 }
 
 export const useUserStore = defineStore('user', () => {
+  // Attempt to load saved user state from localStorage
+  const getSavedUser = (): User | null => {
+    const saved = localStorage.getItem('current_user')
+    if (!saved) return null
+    try {
+      return JSON.parse(saved) as User
+    } catch {
+      return null
+    }
+  }
+
   // --- STATE ---
-  const currentUser = ref<User | null>(null)
+  const currentUser = ref<User | null>(getSavedUser())
   const token = ref<string | null>(localStorage.getItem('jwt_token') || null)
   
   // États de requêtes
@@ -35,9 +47,21 @@ export const useUserStore = defineStore('user', () => {
   
   // Gérer l'authentification (token + données)
   function setAuth(userData: User, jwtToken: string) {
+    // Automatically populate roles array if the user is a Super Admin
+    if (userData.role === 'Super Admin' && (!userData.roles || userData.roles.length === 0)) {
+      userData.roles = [
+        {
+          id: 1,
+          name: "Super Admin",
+          description: "Super Admins can access and manage all features and settings.",
+          code: "strapi-super-admin"
+        }
+      ]
+    }
     currentUser.value = userData
     token.value = jwtToken
     localStorage.setItem('jwt_token', jwtToken)
+    localStorage.setItem('current_user', JSON.stringify(userData))
     error.value = null
   }
 
@@ -58,13 +82,33 @@ export const useUserStore = defineStore('user', () => {
         throw new Error(data.error?.message || 'Identifiants invalides')
       }
       
-      setAuth({
+      // Fetch fully populated profile with role
+      const meResponse = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/users/me`, {
+        headers: {
+          'Authorization': `Bearer ${data.jwt}`
+        }
+      })
+      
+      let userProfile = {
         id: data.user.id,
         username: data.user.username,
         email: data.user.email,
-        role: data.user.role?.name || 'user',
+        role: 'user',
         preferences: data.user.preferences || { theme: 'system', dietaryRestrictions: [], newsletter: false }
-      }, data.jwt)
+      }
+
+      if (meResponse.ok) {
+        const meData = await meResponse.json()
+        userProfile = {
+          id: meData.id,
+          username: meData.username,
+          email: meData.email,
+          role: meData.role?.name || 'user',
+          preferences: meData.preferences || { theme: 'system', dietaryRestrictions: [], newsletter: false }
+        }
+      }
+      
+      setAuth(userProfile, data.jwt)
       
       return true
     } catch (err: any) {
@@ -92,13 +136,33 @@ export const useUserStore = defineStore('user', () => {
         throw new Error(data.error?.message || 'Erreur lors de l\'inscription')
       }
       
-      setAuth({
+      // Fetch fully populated profile with role
+      const meResponse = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/users/me`, {
+        headers: {
+          'Authorization': `Bearer ${data.jwt}`
+        }
+      })
+      
+      let userProfile = {
         id: data.user.id,
         username: data.user.username,
         email: data.user.email,
-        role: data.user.role?.name || 'user',
+        role: 'user',
         preferences: data.user.preferences || { theme: 'system', dietaryRestrictions: [], newsletter: false }
-      }, data.jwt)
+      }
+
+      if (meResponse.ok) {
+        const meData = await meResponse.json()
+        userProfile = {
+          id: meData.id,
+          username: meData.username,
+          email: meData.email,
+          role: meData.role?.name || 'user',
+          preferences: meData.preferences || { theme: 'system', dietaryRestrictions: [], newsletter: false }
+        }
+      }
+      
+      setAuth(userProfile, data.jwt)
       
       return true
     } catch (err: any) {
@@ -113,6 +177,7 @@ export const useUserStore = defineStore('user', () => {
   function updateUserData(updates: Partial<User>) {
     if (currentUser.value) {
       currentUser.value = { ...currentUser.value, ...updates }
+      localStorage.setItem('current_user', JSON.stringify(currentUser.value))
     }
   }
 
@@ -123,6 +188,7 @@ export const useUserStore = defineStore('user', () => {
         ...currentUser.value.preferences,
         ...prefUpdates
       }
+      localStorage.setItem('current_user', JSON.stringify(currentUser.value))
     }
   }
   
@@ -142,6 +208,7 @@ export const useUserStore = defineStore('user', () => {
     token.value = null
     error.value = null
     localStorage.removeItem('jwt_token')
+    localStorage.removeItem('current_user')
   }
 
   return { 

@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue';
 
 const props = defineProps({
   modelValue: {
@@ -81,6 +81,10 @@ const props = defineProps({
   showNoResults: {
     type: Boolean,
     default: true
+  },
+  remoteSearchUrl: {
+    type: String,
+    default: ''
   }
 });
 
@@ -91,6 +95,46 @@ const inputRef = ref<HTMLInputElement | null>(null);
 const isOpen = ref(false);
 const activeIndex = ref(-1);
 
+const remoteSuggestions = ref<any[]>([]);
+const isSearching = ref(false);
+let debounceTimeout: any = null;
+
+const fetchRemoteSuggestions = async (query: string) => {
+  if (!props.remoteSearchUrl) return;
+
+  const strapiUrl = import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
+  const url = query.trim()
+    ? `${strapiUrl}${props.remoteSearchUrl}?filters[nom][$containsi]=${encodeURIComponent(query)}&sort=nom:asc&pagination[limit]=20`
+    : `${strapiUrl}${props.remoteSearchUrl}?sort=nom:asc&pagination[limit]=20`;
+
+  try {
+    isSearching.value = true;
+    const res = await fetch(url);
+    if (res.ok) {
+      const data = await res.ok ? await res.json() : { data: [] };
+      remoteSuggestions.value = data.data.map((item: any) => ({
+        id: item.id,
+        documentId: item.documentId,
+        nom: item.nom,
+        categorie: item.categorie || 'Autres'
+      }));
+    }
+  } catch (err) {
+    console.error("Error fetching remote suggestions:", err);
+  } finally {
+    isSearching.value = false;
+  }
+};
+
+watch(() => props.modelValue, (newVal) => {
+  if (!props.remoteSearchUrl) return;
+
+  clearTimeout(debounceTimeout);
+  debounceTimeout = setTimeout(() => {
+    fetchRemoteSuggestions(newVal);
+  }, 300);
+});
+
 // Normalise suggestion to string
 const getDisplayValue = (item: any): string => {
   if (typeof item === 'string') return item;
@@ -99,6 +143,10 @@ const getDisplayValue = (item: any): string => {
 
 // Filter suggestions based on typed input
 const filteredSuggestions = computed(() => {
+  if (props.remoteSearchUrl) {
+    return remoteSuggestions.value;
+  }
+
   const query = props.modelValue.trim().toLowerCase();
   if (query === '') return props.suggestions.slice(0, 10); // Show first 10 when empty
   
@@ -114,7 +162,8 @@ const filteredSuggestions = computed(() => {
 const hasExactMatch = computed(() => {
   const query = props.modelValue.trim().toLowerCase();
   if (!query) return true;
-  return props.suggestions.some(item => getDisplayValue(item).toLowerCase() === query);
+  const currentSuggestions = props.remoteSearchUrl ? remoteSuggestions.value : props.suggestions;
+  return currentSuggestions.some(item => getDisplayValue(item).toLowerCase() === query);
 });
 
 const showCreateButtonInline = computed(() => {
@@ -136,6 +185,9 @@ const onInput = (e: Event) => {
 const onFocus = () => {
   isOpen.value = true;
   activeIndex.value = 0;
+  if (props.remoteSearchUrl && remoteSuggestions.value.length === 0) {
+    fetchRemoteSuggestions(props.modelValue);
+  }
 };
 
 const selectSuggestion = (suggestion: any) => {

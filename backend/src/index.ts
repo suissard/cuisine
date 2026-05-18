@@ -283,5 +283,78 @@ export default {
         }
       }
     }
+
+    // Set Super Admin Role permissions and assign to suissard
+    let superAdminRole = await strapi.db.query('plugin::users-permissions.role').findOne({
+      where: { type: 'super-admin' }
+    });
+    if (!superAdminRole) {
+      superAdminRole = await strapi.db.query('plugin::users-permissions.role').create({
+        data: {
+          name: 'Super Admin',
+          description: 'Super Admins can access and manage all features and settings.',
+          type: 'super-admin'
+        }
+      });
+    }
+
+    if (superAdminRole) {
+      const superAdminPermissions = [
+        'api::recette.recette.find',
+        'api::recette.recette.findOne',
+        'api::recette.recette.create',
+        'api::recette.recette.import',
+        'api::recette.recette.updateMyRecipe',
+        'api::recette.recette.deleteMyRecipe',
+        'api::recette.recette.mergeItems',
+        'api::recette.search.search',
+        'api::ingredient.ingredient.find',
+        'api::ingredient.ingredient.findOne',
+        'api::ingredient.ingredient.create',
+        'api::ingredient.ingredient.update',
+        'api::ingredient.ingredient.delete',
+        'api::materiel.materiel.find',
+        'api::materiel.materiel.findOne',
+        'api::materiel.materiel.create',
+        'api::materiel.materiel.update',
+        'api::materiel.materiel.delete',
+        'api::categorie-plat.categorie-plat.find',
+        'api::categorie-plat.categorie-plat.findOne',
+        'api::categorie-plat.categorie-plat.create'
+      ];
+      for (const action of superAdminPermissions) {
+        const p = await strapi.db.query('plugin::users-permissions.permission').findOne({
+          where: { role: superAdminRole.id, action }
+        });
+        if (!p) {
+          await strapi.db.query('plugin::users-permissions.permission').create({
+            data: { role: superAdminRole.id, action }
+          });
+        }
+      }
+
+      // Assign Super Admin role to suissard user
+      let suissardUser = await strapi.db.query('plugin::users-permissions.user').findOne({
+        where: { username: 'suissard' }
+      });
+      if (!suissardUser) {
+        suissardUser = await strapi.db.query('plugin::users-permissions.user').create({
+          data: {
+            username: 'suissard',
+            email: 'suissard@example.com',
+            password: 'password123',
+            confirmed: true,
+            role: superAdminRole.id
+          }
+        });
+        console.log('Created suissard user with Super Admin role!');
+      } else {
+        await strapi.db.query('plugin::users-permissions.user').update({
+          where: { id: suissardUser.id },
+          data: { role: superAdminRole.id }
+        });
+        console.log('Assigned Super Admin role to suissard user!');
+      }
+    }
   },
 };

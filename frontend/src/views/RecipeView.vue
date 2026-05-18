@@ -306,13 +306,9 @@ const formatTime = (mins) => {
 };
 
 const getQty = (ing) => {
-  let qty = '';
-  if (ing.valeur) {
-    qty = `${ing.valeur} ${ing.unite}`;
-  } else {
-    qty = ing.unite;
-  }
-  return qty;
+  const hasUnit = ing.unite && ing.unite !== 'null' && ing.unite.trim() !== '';
+  const value = (ing.valeur !== null && ing.valeur !== undefined && ing.valeur !== 0 && ing.valeur !== '') ? ing.valeur : 1;
+  return hasUnit ? `${value} ${ing.unite}` : `${value}`;
 };
 
 const formatEtapeDescription = (etape) => {

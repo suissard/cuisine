@@ -40,6 +40,16 @@ const router = createRouter({
       name: 'auth',
       component: () => import('../views/AuthView.vue'),
     },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: () => import('../views/AdminView.vue'),
+    },
+    {
+      path: '/admin/edit/:type/:id',
+      name: 'admin-edit-item',
+      component: () => import('../views/AdminEditItemView.vue'),
+    },
   ],
 })
 

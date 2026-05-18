@@ -51,9 +51,19 @@
             <div class="input-group">
               <label>Catégories de plat</label>
               <p class="field-hint">Sélectionnez une ou plusieurs catégories</p>
+              
+              <div class="category-search-wrapper">
+                <input
+                  v-model="categorySearch"
+                  type="text"
+                  placeholder="🔍 Rechercher une catégorie..."
+                  class="category-search-input"
+                />
+              </div>
+
               <div class="category-badges">
                 <span
-                  v-for="cat in availableCategories"
+                  v-for="cat in displayedCategories"
                   :key="cat"
                   :class="['cat-badge', { active: form.categories.includes(cat) }]"
                   @click="toggleCategory(cat)"
@@ -70,21 +80,25 @@
               <h2>🛒 Ingrédients</h2>
               <span class="count-badge">{{ form.ingredients.length }}</span>
             </div>
-            <p class="field-hint">Saisissez l'ingrédient et l'unité. Utilisez l'autocomplétion ou créez un nouvel élément s'il n'existe pas.</p>
+            <p class="field-hint">Saisissez l'ingrédient, l'unité et une précision facultative. Utilisez l'autocomplétion ou créez un nouvel élément s'il n'existe pas.</p>
             
             <div class="ingredients-list">
               <transition-group name="list">
                 <div v-for="(ing, idx) in form.ingredients" :key="idx" class="dynamic-row">
-                  <div class="autocomplete-wrapper flex-2">
+                  <div class="autocomplete-wrapper flex-3">
                     <AutocompleteInput
                       v-model="ing.nom"
+                      remoteSearchUrl="/api/ingredients"
                       :suggestions="availableIngredients"
                       displayKey="nom"
                       placeholder="Nom de l'ingrédient"
                       @create="(val) => handleCreateIngredient(val, idx)"
                     />
                   </div>
-                  <div class="number-input-wrapper flex-1">
+                  <div class="flex-2">
+                    <input v-model="ing.sous_type" type="text" placeholder="Précision (ex: bio, haché)">
+                  </div>
+                  <div class="number-input-wrapper flex-0-3">
                     <input v-model.number="ing.valeur" type="number" placeholder="Qté" class="qte-input" min="0" step="any">
                   </div>
                   <div class="autocomplete-wrapper flex-1">
@@ -154,6 +168,7 @@
                     <div class="autocomplete-wrapper flex-2">
                       <AutocompleteInput
                         v-model="mu.materiel"
+                        remoteSearchUrl="/api/materiels"
                         :suggestions="availableMateriels"
                         displayKey="nom"
                         placeholder="Nom du matériel (ex: Casserole)"
@@ -187,7 +202,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive, onMounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useUserStore } from '@/stores/user';
 import AutocompleteInput from '@/components/AutocompleteInput.vue';
@@ -197,14 +212,31 @@ const userStore = useUserStore();
 const step = ref(1);
 const submitting = ref(false);
 
+const categorySearch = ref('');
+
 const form = reactive({
   titre: '',
   description: '',
   portions: 4,
   degustation: 'Chaud',
   categories: [] as string[],
-  ingredients: [{ nom: '', valeur: 0, unite: '' }],
+  ingredients: [{ nom: '', valeur: 0, unite: '', sous_type: '' }],
   etapes: [{ description: '', prep: 0, cuisson: 0, repos: 0, materiel_utilise: [] as Array<{ materiel: string, texte_associe: string }> }]
+});
+
+const displayedCategories = computed(() => {
+  const query = categorySearch.value.trim().toLowerCase();
+  const selected = form.categories;
+  if (!query) {
+    const nonSelected = availableCategories.value.filter(cat => !selected.includes(cat));
+    return [...selected, ...nonSelected.slice(0, 12)];
+  } else {
+    const matching = availableCategories.value.filter(cat => 
+      cat.toLowerCase().includes(query)
+    );
+    const matchingNonSelected = matching.filter(cat => !selected.includes(cat));
+    return [...selected, ...matchingNonSelected];
+  }
 });
 
 // Autocomplete databases loaded from Strapi backend
@@ -225,7 +257,7 @@ onMounted(async () => {
 
   try {
     // 1. Fetch ingredients list
-    const ingRes = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/ingredients?pagination[limit]=1000`);
+    const ingRes = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/ingredients?sort=nom:asc&pagination[limit]=1000`);
     if (ingRes.ok) {
       const data = await ingRes.json();
       availableIngredients.value = data.data.map((item: any) => ({
@@ -237,7 +269,7 @@ onMounted(async () => {
     }
 
     // 2. Fetch materials list
-    const matRes = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/materiels?pagination[limit]=1000`);
+    const matRes = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/materiels?sort=nom:asc&pagination[limit]=1000`);
     if (matRes.ok) {
       const data = await matRes.json();
       availableMateriels.value = data.data.map((item: any) => ({
@@ -248,7 +280,7 @@ onMounted(async () => {
     }
 
     // 3. Fetch categories list
-    const catRes = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/categorie-plats?pagination[limit]=1000`);
+    const catRes = await fetch(`${import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337'}/api/categorie-plats?sort=nom:asc&pagination[limit]=1000`);
     if (catRes.ok) {
       const data = await catRes.json();
       availableCategories.value = data.data.map((item: any) => item.nom);
@@ -269,12 +301,12 @@ const toggleCategory = (cat: string) => {
 };
 
 // Ingredients management
-const addIngredient = () => form.ingredients.push({ nom: '', valeur: 0, unite: '' });
+const addIngredient = () => form.ingredients.push({ nom: '', valeur: 0, unite: '', sous_type: '' });
 const removeIngredient = (idx: number) => {
   if (form.ingredients.length > 1) {
     form.ingredients.splice(idx, 1);
   } else {
-    form.ingredients[0] = { nom: '', valeur: 0, unite: '' };
+    form.ingredients[0] = { nom: '', valeur: 0, unite: '', sous_type: '' };
   }
 };
 
@@ -284,10 +316,19 @@ const removeEtape = (idx: number) => form.etapes.splice(idx, 1);
 
 // Step materials management
 const addStepMateriel = (stepIdx: number) => {
-  form.etapes[stepIdx].materiel_utilise.push({ materiel: '', texte_associe: '' });
+  const stepObj = form.etapes[stepIdx];
+  if (stepObj) {
+    if (!stepObj.materiel_utilise) {
+      stepObj.materiel_utilise = [];
+    }
+    stepObj.materiel_utilise.push({ materiel: '', texte_associe: '' });
+  }
 };
 const removeStepMateriel = (stepIdx: number, matIdx: number) => {
-  form.etapes[stepIdx].materiel_utilise.splice(matIdx, 1);
+  const stepObj = form.etapes[stepIdx];
+  if (stepObj && stepObj.materiel_utilise) {
+    stepObj.materiel_utilise.splice(matIdx, 1);
+  }
 };
 
 // On-the-fly creation of missing items on the backend database
@@ -320,7 +361,10 @@ const handleCreateIngredient = async (nom: string, idx: number) => {
       // Add to suggestions list so it's globally available
       availableIngredients.value.push(formattedItem);
       // Auto-select in input
-      form.ingredients[idx].nom = formattedItem.nom;
+      const ingObj = form.ingredients[idx];
+      if (ingObj) {
+        ingObj.nom = formattedItem.nom;
+      }
     } else {
       console.error("Failed to create ingredient");
     }
@@ -354,7 +398,13 @@ const handleCreateMateriel = async (nom: string, stepIdx: number, matIdx: number
       // Add to suggestions list so it's globally available
       availableMateriels.value.push(formattedItem);
       // Auto-select in input
-      form.etapes[stepIdx].materiel_utilise[matIdx].materiel = formattedItem.nom;
+      const stepObj = form.etapes[stepIdx];
+      if (stepObj && stepObj.materiel_utilise) {
+        const matObj = stepObj.materiel_utilise[matIdx];
+        if (matObj) {
+          matObj.materiel = formattedItem.nom;
+        }
+      }
     } else {
       console.error("Failed to create material");
     }
@@ -396,7 +446,7 @@ const handleSubmit = async () => {
           ingredient: { nom: ing.nom, categorie: 'Autres' },
           valeur: ing.valeur || null,
           unite: ing.unite || null,
-          sous_type: ''
+          sous_type: ing.sous_type || ''
         })),
       etapes: form.etapes.map((etape, index) => ({
         ordre: index + 1,
@@ -642,6 +692,27 @@ textarea {
 }
 
 /* Category badging styling */
+.category-search-wrapper {
+  margin-bottom: 15px;
+  max-width: 350px;
+}
+
+.category-search-input {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+  transition: all 0.25s ease;
+}
+
+.category-search-input:focus {
+  background: white;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
 .category-badges {
   display: flex;
   flex-wrap: wrap;
@@ -687,8 +758,10 @@ textarea {
   width: 100%;
 }
 
+.flex-3 { flex: 3; }
 .flex-2 { flex: 2; }
 .flex-1 { flex: 1; }
+.flex-0-3 { flex: 0.35; }
 
 .qte-input {
   text-align: center;
